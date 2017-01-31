@@ -7,7 +7,7 @@
 \begin{document}
 	\section{Credits}
 	Domande fornite da Eduard Bicego. \\
-	Risposte fornite da Mattia Bottaro, Luca Bertolini.
+	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.
 	
 	\section{Introduzione al copyright}
 	
@@ -124,7 +124,7 @@
 	svnadmin create <path>
 	\end{verbatim}
 	
-	\paragraph{Creare una working copy on checkout}:\\
+	\paragraph{Creare una working copy con checkout}:\\
 	Il comando \textit{checkout} serve per crearsi in locale una copia del progetto. È lo stesso concetto ci \textit{clone} di git.
 	\begin{verbatim}
 	svn checkout <url> <path>
@@ -133,8 +133,9 @@
 	Poniamo ad esempio di avere un repository nella cartella \textit{folder}, situata nel localhost.
 	In locale, daremo il seguente comando:
 	\begin{verbatim}
-	svn checkout localhost/folder <path>
+	svn co localhost/folder <path>
 	\end{verbatim}
+	dove co è l'abbreviazione di checkout.\\
 	Rispetto a clone di git, con checkout di svn è possibile copiare delle cartelle o singoli file del repo, semplicemente specificandone il percorso nel server.
 	
 	\paragraph{Mostrare un ciclo modifica -> commit -> update}
@@ -152,7 +153,7 @@
 	
 	\paragraph{Mostrare l'uso dei comandi svn status e revert <file>}
 	\begin{itemize}
-		\item status: comando per controllare modifiche al repo e visualizzare informazioni su quest'ultimo.
+		\item status: stampa lo stato dei file e cartelle della working copy.
 		\begin{verbatim}
 		svn status
 		\end{verbatim}
@@ -161,22 +162,27 @@
 		svn revert
 		\end{verbatim}
 	\end{itemize}
-	\paragraph{Quali sono le opzioni di svn status?}
+	\paragraph{Quali sono le opzioni di svn status?}: \\
+	In \textbf{grassetto} sono evidenziati quelli importanti.
 	\begin{itemize}
 		
 		
-		\item - -changelist (- -cl) ARG
-		\item - -depth ARG
+		\item - -changelist (- -cl) ARG, questo comando dice su quali file operare. ARG è la lista dei file
+		\item - -depth ARG, questo comando dice il limite dello scope dell'operazione.
 		\item - -ignore-externals
 		\item - -incremental
-		\item - -no-ignore
-		\item - -quiet (-q)
-		\item - -show-updates (-u)
-		\item - -verbose (-v)
-		\item - -xml
+		\item - -no-ignore, vengono considerati anche i file che svn normalmente ignora(settati con la proprietà svn:ignore. Vedere domanda "Ignorare tutti i file ...")
+		\item \textbf{- -quiet (-q)}, stampa un riassunto delle informazioni sugli elementi localmente modificati
+		\item \textbf{- -show-updates (-u)}, stampa le revisioni di lavoro e informazioni su eventuali problemi di out-of-date con il server(out of date:=alterato localmente ma non aggiornato sul server).
+		\item \textbf{- -verbose (-v)}, stampa dettagliatamente tutte le informazioni di revisione su ogni elemento locale.
+		\item \textbf{- -xml}, stampa l'output in formato XML 
 		
 	\end{itemize}
-	da definire...
+	Esempio: vedere quali file sono out-of-date nella working copy
+	\begin{verbatim}
+	svn status -u wc
+	\end{verbatim}
+	dove wc è la working copy.
 	\paragraph{Eseguire il backup del repository}: \\
 	Si può fare in diversi modi:
 	\begin{itemize}
@@ -200,7 +206,7 @@
 	\begin{itemize}
 		\item load con svnadmin: legge da uno stream di input stdin il dump di un repository
 		\begin{verbatim}
-		svnadmin load <path> < repos_backup
+		svnadmin load <path> < repos_backup.dump
 		\end{verbatim}
 	\end{itemize}
 	\paragraph{Mostrare come riconoscere se un file è stato modificato}
@@ -210,8 +216,26 @@
 	\begin{verbatim}
 	svn commit -m "messaggio di commit" *.html
 	\end{verbatim}
-	\paragraph{Ignorare tutti i file all'interno di una precisa cartella}
-	
+	\paragraph{Ignorare tutti i file all'interno di una precisa cartella}: \\
+	Bisogna settare la proprietà \textit{ignore}, in questo modo:
+	\begin{verbatim}
+	svn propset svn:ignore <path> .
+	\end{verbatim}
+	dove path è il percorso della cartella.\\
+	Lo si può fare in modo analogo con singoli file.
+	Se invece vogliamo ignorare più tipi di file(quello che in git è fatto da \textit{.gitignore}) w/o più cartelle, si crea un file contenente tutte le estensioni dei file e i path alle cartelle che vogliamo ignorare, ad esempio
+	\begin{verbatim}
+	folder_eseguibili
+	docs/ndp
+	.o 
+	.out
+	.exe
+	.toc 
+	\end{verbatim}
+	nominiamo questo file \textit{svnignore.txt} e diamo il comando
+	\begin{verbatim}
+	svn propset svn:ignore -F svnignore.txt
+	\end{verbatim}
 	\paragraph{Ottenere conflitti tra due utenti}
 	
 	\paragraph{Risolvere manualmente un conflitto e committare}
