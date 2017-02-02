@@ -389,6 +389,15 @@
 	Per comunicare al sistema che il conflitto è stato risolto.
 
 	\paragraph{Cancellare le modifiche dopo averle committate}
+	Dare il comando 
+	\begin{verbatim}
+	svn status -v -u
+	\end{verbatim}
+	Che permette di vedere il numero della revisione a cui si è arrivati e successivamente dare il comando
+	\begin{verbatim}
+	svn merge -r n_att:n_prev
+	\end{verbatim}
+	Dove n_att è il numero della revisione attiale mentre n_prev è il numero della revisione precedente.
 	
 	\paragraph{Caricare il repository in Internet}
 	
