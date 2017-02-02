@@ -169,17 +169,35 @@
 		\subsection{GPL v2}
 		
 			\paragraph{Illustrare tutti gli obblighi che una persona deve soddisfare per poter distribuire solo i binari (nel testo)}
-			
+			Tali obblighi sono descritti nella sezione 3 della licenza. Essi descrivono cosa deve accompagnare il codice oggetto (program) o l'eseguibile. Le opzioni sono esclusive.
+			\begin{itemize}
+				\item Deve essere accompagnato dal relativo codice sorgente anch'esso distribuito sotto le regole di questa licenza; oppure
+				\item Deve essere accompagnato da un'offerta scritta, valida per almeno 3 anni, di fornire il codice sorgente a chiunque ne faccia richiesta in cambio di un costo non superiore al costo di trasferimento fisico, esso va fornito secondo le regole di questa licenza; oppure
+				\item Deve essere accompagnato dalle informazioni che sono state ricevute riguardo alla possibilità di ottenere il codice sorgente solo nei casi:
+				\begin{itemize}
+					\item di distribuzioni non commerciali; e
+					\item in cui il programma è stato ottenuto sotto forma di codice oggetto o eseguibile in accordo al precedente comma.
+			\end{itemize}
 		
 			\paragraph{Nel caso di sorgenti modificati quali sono gli obblighi? (Illustrare nel testo)}
+				Tali obblighi sono descritti nella sezione 2 della licenza. Essi regolano la modifica o la copia del programma o porzioni di esso.
+				\begin{itemize}
+					\item Indicare chiaramente nei file se si trattano di copie modifiche e indicare la data della modifica; e
+					\item ogni opera distribuita che deriva dal programma o da parti di esso deve essere concessa nella sua interezza secondo i termini di questa licenza; e
+					\item se il programma modificato legge comandi interattivamente quando viene eseguito, esso all'inizio deve mostrare un messaggio contenente una nota di copyright e di garanzia (anche assente se lo è). Il messaggio deve inoltre specificare che chiunque intenda ridistribuire l'opera secondo questa licenza.
+				\end{itemize}
 		
 			\paragraph{Cosa fare nel caso dovessi passare la libreria a una terza persona? Ci sono limitazioni?}
+				Si applicano le stesse regole per qualsiasi software regolato da GPL. Ciò significa che un software che fa uso di tale libreria dovrà essere distribuito sotto licenza GPL.
+				Nonostante questo l'uso della GPL per una libreria è scoraggiato, la GPL v2 infatti consiglia l'uso della licenza meno restrittiva Lesser GNU Public License (LGPL) la quale permette l'uso di librerie software sotto LGPL per software proprietari a patto che queste non siano modificate ma solo "collegate". Un software che fa uso di software regolato da LGPL può essere licenziato con la GPL.
+				La licenza è nata per poter far sì che anche il software proprietario usasse la libreria C nel sistema GNU. Se tale libreria fosse stata regolamentata dalla GPL avrebbe scoraggiato l'uso del sistema GNU anche per chi avesse voluto sviluppare software proprietario. Oltre a questo si fa notare che la GPL racchiude molta ambiguità tra i termini \textit{opera derivata} e \textit{opera collettiva}, la LGPL nonostante il tentativo non li risolve. (fonte: Open Source Licensing - Lawrence Rosen)
+				
 			
 			\paragraph{Come rendere disponibile la consultazione dei codici sorgenti di binari con licenza GPL v2?} % 2 possibilità
-			
-			\paragraph{Quali sono le 3 condizioni che si applicano per chi distribuisce solo i binari?}
+			Allegando il codice sorgente ai binari stessi oppure allegando una offerta scritta valida per 3 anni la quale afferma che è possibile distribuire il codice sorgente previa richiesta con il costo non superiore al trasferimento fisico del codice sorgente (il costo del CD/DVD e del pacco postale nel caso fosse inviato fisicamente, con Internet è pari a zero).
 			
 			\paragraph{Cosa contiene la clausola "Libertà o morte"?}
+				La clausola 7 specifica che qualora ci siano restrizioni di qualsiasi tipo sulla distribuzione nei termini indicati dalla licenza, il software non può essere distribuito. La clausola serve per scoraggiare l'imposizione di regole legali nella distribuzione del software.
 		
 		\subsection{GPL v3}
 			
