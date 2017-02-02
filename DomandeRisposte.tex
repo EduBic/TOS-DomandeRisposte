@@ -378,7 +378,16 @@
 	Otterremo un conflitto
 
 	\paragraph{Risolvere manualmente un conflitto e committare}
-	
+	Creiamo un conflitto come nella domanda sopra. Quando viene dato il comando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	E scegliamo come opzione ``p'' (postpone). Ora possiamo aprire il file dove c'è il conflitto con un editor di testo e risolvere il conflitto. Fatto questo diamo il comando
+	\begin{verbatim}
+	svn resolved prova.txt
+	\end{verbatim}
+	Per comunicare al sistema che il conflitto è stato risolto.
+
 	\paragraph{Cancellare le modifiche dopo averle committate}
 	
 	\paragraph{Caricare il repository in Internet}
