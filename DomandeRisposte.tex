@@ -5,9 +5,13 @@
 
 
 \begin{document}
-
+	\section{Credits}
+	Domande fornite da Eduard Bicego. \\
+	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.
+	
 	\section{Introduzione al copyright}
 	
+<<<<<<< HEAD
 		\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}:\\
 		Un editto è un'ordinanza emanata da un'autorità.
 		Il copyright è l'insieme delle leggi sul diritto d'autore.
@@ -92,13 +96,51 @@
 			\item La Symbolics crea software con modifiche non rilasciate all'altra azienda;
 			\item I padri del movimento hacker, non più al MIT, non riescono a sostenere il loro software interno e ciò porta all'utilizzo di software proprietario.
 		\end{itemize}
-	
 
+	\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}
+	
+	\paragraph{Chi è Johames di Spira?} % Domanda incomprensibile
+	
+	\paragraph{Qual è uno dei grandi cambiamenti dell'editto di Ann?}
+	
+	
+	\section{Nascita del progetto GNU}
+	
+	\paragraph{Chi è Richard Stallman?}
+	È uno dei principale esponenti del software libero bla bla...
+	\paragraph{Dove aveva cominciato a lavorare prima del MIT?}
+	
+	\paragraph{Com'è che Stallman entra nella comunità del MIT?}
+	
+	\paragraph{Qual è il lavoro di Stallman?}
+	
+	\paragraph{Su cosa comincerà a lavorare Stallman nel MIT?}
+	
+	
+	\paragraph{Che cos'è TECO?}
+	
+	\paragraph{Sotto quale licenza era TECO?}
+	
+	\paragraph{Che cos'è Emacs?} %GNU HURD ???
+	
+	\paragraph{Che cosa permetteva di fare Emacs?}
+	
+	\paragraph{Sotto quale licenza venne distribuito Emacs?}
+	
+	\paragraph{Che relazione c'è tra TECO e Emacs?}
+	
+	
+	\paragraph{Durante la fine del periodo hacker (anni '70), che cosa fa crollare tutto? Chi e perché si organizza uno sciopero?}
+	
+	
+	\paragraph{Chi ha inventato le Lisp machine? Cosa sono? Quali aziende le hanno inventate? Perché queste aziende hanno avuto un impatto sulla comunità hacker?}
+	
+	
 	\section{Linux}
-		
-		\paragraph{Racconta la nascita di Linux partendo da il sistema UNIX passando per MINIX}
-		
-		\paragraph{Come si è evoluto e diffuso Linux?}
+	
+	\paragraph{Racconta la nascita di Linux partendo da il sistema UNIX passando per MINIX}
+	
+	\paragraph{Come si è evoluto e diffuso Linux?}
 	
 	
 	\section{Open source}	
@@ -191,12 +233,51 @@
 				La clausola di rinomina fa sì che la licenza conceda l'uso del software ma non del marchio del software e dell'organizzazione.
 				Nel caso Apache, la licenza protegge il nome Apache e Apache Software Foundation per scopi pubblicitari senza il permesso e per l'uso del nome stesso in progetti derivati senza il permesso. Al contrario della BSD il marchio è protetto.
 			
+	\section{Open source}
 	
-		\subsection{Mozilla public license}
-		
-			\paragraph{Spiegare la licenza}
-		
-		
+	\paragraph{Come è nato il movimento Open-Source?}
+	
+	\paragraph{Chi scrive "La cattedrale e il bazaar"? Di cosa parla? In quali anni?}
+	
+	\paragraph{Quale grande evento ha fatto si che Raymond diventasse famoso?}
+	
+	\paragraph{A quali scopi Netscape rilascia il codice sorgente?}
+	
+	\paragraph{Cosa relaziona il rilascio del codice sorgente di Netscape a Raymond?}
+	
+	
+	\section{Creative Commons}
+	
+	\paragraph{Come nasce il primo movimento di Creative Commons?}
+	
+	\paragraph{Qualcuno ha guidato il movimento Open Content? Chi sono state le prime persone che si sono battute per questi diritti?}
+	
+	
+	
+	
+	\section{Licenze}
+	
+	\subsection{GPL v2}
+	
+	\paragraph{Illustrare tutti gli obblighi che una persona deve soddisfare per poter distribuire solo i binari 	(nel testo)}
+	
+	\paragraph{Nel caso di sorgenti modificati quali sono gli obblighi? (Illustrare nel testo)}
+	
+	\paragraph{Cosa fare nel caso dovessi passare la libreria a una terza persona? Ci sono limitazioni?}
+	
+	\paragraph{Come rendere disponibile la consultazione dei codici sorgenti di binari con licenza GPL v2?} % 2 possibilità
+	
+	\paragraph{Quali sono le 3 condizioni che si applicano per chi distribuisce solo i binari?}
+	
+	\paragraph{Cosa contiene la clausola "Libertà o morte"?}
+	
+	\subsection{GPL v3}
+	
+	\paragraph{Illustrare le caratteristiche principali}: \\
+	\subsection{BSD}
+	
+	\paragraph{Illustrare brevemente 2a, 3a e 4a clausola}
+
 	\section{Date importanti}
 	
 	\begin{description}
@@ -211,28 +292,125 @@
 	
 	\section{SVN}
 	
-	\paragraph{Creare un repository SVN}
+	\paragraph{Creare un repository SVN}: \\
+	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}.
+	Nel server, si dovrà dare il comando:
+	\begin{verbatim}
+	svnadmin create <path>
+	\end{verbatim}
 	
-	\paragraph{Creare una working copy on checkout}
+	\paragraph{Creare una working copy con checkout}:\\
+	Il comando \textit{checkout} serve per crearsi in locale una copia del progetto. È lo stesso concetto ci \textit{clone} di git.
+	\begin{verbatim}
+	svn checkout <url> <path>
+	\end{verbatim}
+	dove \textit{<url>} è la posizione del repository, mentre \textit{<path>} è il percorso LOCALE nel quale vogliamo copiarlo.
+	Poniamo ad esempio di avere un repository nella cartella \textit{folder}, situata nel localhost.
+	In locale, daremo il seguente comando:
+	\begin{verbatim}
+	svn co localhost/folder <path>
+	\end{verbatim}
+	dove co è l'abbreviazione di checkout.\\
+	Rispetto a clone di git, con checkout di svn è possibile copiare delle cartelle o singoli file del repo, semplicemente specificandone il percorso nel server.
 	
 	\paragraph{Mostrare un ciclo modifica -> commit -> update}
+	\begin{itemize}
+		\item modifica: consiste nella modifica di un file;
+		\item commit: questo comando invia le modifiche della working copy al server.\begin{verbatim}
+		svn commit --message "Messaggio del commit" [<path>]
+		\end{verbatim}
+		Il messaggio è obbligatorio e path è il percorso LOCALE dal quale caricare le modifiche. Se path non è specificato, allora assume il valore di default, ovvero la cartella corrente.
+		\item update: questo comando aggiorna la working copy con la copia aggiornata del repository.
+		\begin{verbatim}
+		svn update
+		\end{verbatim}
+	\end{itemize}
 	
 	\paragraph{Mostrare l'uso dei comandi svn status e revert <file>}
-	
-	\paragraph{Quali sono le opzioni di svn status?}
-	
-	\paragraph{Eseguire il backup del repository}
-	
-	\paragraph{Cancellare un repository}
+	\begin{itemize}
+		\item status: stampa lo stato dei file e cartelle della working copy.
+		\begin{verbatim}
+		svn status
+		\end{verbatim}
+		\item revert: vengono annullate le ultime modifiche in locale, in particolare i file in locale tornano alla stessa versione del server.
+		\begin{verbatim}
+		svn revert
+		\end{verbatim}
+	\end{itemize}
+	\paragraph{Quali sono le opzioni di svn status?}: \\
+	In \textbf{grassetto} sono evidenziati quelli importanti.
+	\begin{itemize}
+		
+		
+		\item - -changelist (- -cl) ARG, questo comando dice su quali file operare. ARG è la lista dei file
+		\item - -depth ARG, questo comando dice il limite dello scope dell'operazione.
+		\item - -ignore-externals
+		\item - -incremental
+		\item - -no-ignore, vengono considerati anche i file che svn normalmente ignora(settati con la proprietà svn:ignore. Vedere domanda "Ignorare tutti i file ...")
+		\item \textbf{- -quiet (-q)}, stampa un riassunto delle informazioni sugli elementi localmente modificati
+		\item \textbf{- -show-updates (-u)}, stampa le revisioni di lavoro e informazioni su eventuali problemi di out-of-date con il server(out of date:=alterato localmente ma non aggiornato sul server).
+		\item \textbf{- -verbose (-v)}, stampa dettagliatamente tutte le informazioni di revisione su ogni elemento locale.
+		\item \textbf{- -xml}, stampa l'output in formato XML 
+		
+	\end{itemize}
+	Esempio: vedere quali file sono out-of-date nella working copy
+	\begin{verbatim}
+	svn status -u wc
+	\end{verbatim}
+	dove wc è la working copy.
+	\paragraph{Eseguire il backup del repository}: \\
+	Si può fare in diversi modi:
+	\begin{itemize}
+		\item hotcopy con svnadmin: viene creata una copia di backup comprendente i file di configurazione, quelli del DB e gli hooks(programmi attivati da certi eventi sul repository). \begin{verbatim}
+		svnadmin hotcopy <path_repo> <new_path_repo>
+		\end{verbatim}
+		\item dump con svnadmin: scrive(dump) il contenuto del filesystem in un "dump file" portable format tramite uno stream di output stdout.\begin{verbatim}
+		svnadmin dump <path> > full.dump
+		\end{verbatim}
+		
+		\item migrare un progetto ad un nuovo repo...?
+		
+	\end{itemize}
+	\paragraph{Cancellare un repository}: \\
+	Lo si può fare con i comandi non specifici di svn.
+	\begin{verbatim}
+	rm -rf <path>
+	\end{verbatim}
 	
 	\paragraph{Ripristinare il repository}
-	
+	\begin{itemize}
+		\item load con svnadmin: legge da uno stream di input stdin il dump di un repository
+		\begin{verbatim}
+		svnadmin load <path> < repos_backup.dump
+		\end{verbatim}
+	\end{itemize}
 	\paragraph{Mostrare come riconoscere se un file è stato modificato}
 	
-	\paragraph{Eseguire un commit ignorando alcuni file}
-	
-	\paragraph{Ignorare tutti i file all'interno di una precisa cartella}
-	
+	\paragraph{Eseguire un commit ignorando alcuni file}: \\
+	Si possono commitare file singoli. Poniamo di voler committare tutti i file .html e non quelli .php. Il comando sarà:
+	\begin{verbatim}
+	svn commit -m "messaggio di commit" *.html
+	\end{verbatim}
+	\paragraph{Ignorare tutti i file all'interno di una precisa cartella}: \\
+	Bisogna settare la proprietà \textit{ignore}, in questo modo:
+	\begin{verbatim}
+	svn propset svn:ignore <path> .
+	\end{verbatim}
+	dove path è il percorso della cartella.\\
+	Lo si può fare in modo analogo con singoli file.
+	Se invece vogliamo ignorare più tipi di file(quello che in git è fatto da \textit{.gitignore}) w/o più cartelle, si crea un file contenente tutte le estensioni dei file e i path alle cartelle che vogliamo ignorare, ad esempio
+	\begin{verbatim}
+	folder_eseguibili
+	docs/ndp
+	.o 
+	.out
+	.exe
+	.toc 
+	\end{verbatim}
+	nominiamo questo file \textit{svnignore.txt} e diamo il comando
+	\begin{verbatim}
+	svn propset svn:ignore -F svnignore.txt
+	\end{verbatim}
 	\paragraph{Ottenere conflitti tra due utenti}
 	
 	\paragraph{Risolvere manualmente un conflitto e committare}
@@ -246,29 +424,29 @@
 	\paragraph{Creare dei permessi per l'accesso al repository}
 	
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
-
+	
 	\paragraph{Illustrare le conseguenze dell'uso del comando svn update -r}
 	
 	\paragraph{Mostrare come risolvere l'errore "out-of-date"}	
 	
-
+	
 	
 	\section{Mercurial} % Lo chiede ???
 	
-		\paragraph{Creare un repository Mercurial}
-		
-		\paragraph{Operazioni per configurare un repository Mercurial}
-		
-		\paragraph{Aggiungere un file al repository e poi commentarlo}	
-		
-		\paragraph{Eseguire un commit}
-		
-		\paragraph{Fare una modifica ad un file di testo e committarlo}
-		
-		\paragraph{Fare revert di una modifica committata}
-		
-		\paragraph{Rimuovere una cartella e committare}
-		
-		
+	\paragraph{Creare un repository Mercurial}
+	
+	\paragraph{Operazioni per configurare un repository Mercurial}
+	
+	\paragraph{Aggiungere un file al repository e poi commentarlo}	
+	
+	\paragraph{Eseguire un commit}
+	
+	\paragraph{Fare una modifica ad un file di testo e committarlo}
+	
+	\paragraph{Fare revert di una modifica committata}
+	
+	\paragraph{Rimuovere una cartella e committare}
+	
+	
 	
 \end{document}
