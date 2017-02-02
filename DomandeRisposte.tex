@@ -355,7 +355,28 @@
 	\end{verbatim}
 
 	\paragraph{Ottenere conflitti tra due utenti}
-	
+	Per prima cosa creiamo un repository e aggiungiamo un file:
+	\begin{verbatim}
+	svnadmin create ProvaRepo
+	svn co file:///path/to/the/repo/ProvaRepo
+	gedit prova.txt (per esempio per creare un file e metterci dentro qualcosa per esempio la stringa ``prova'')
+	svn add prova.txt
+	svn commit -m ``committed file prova.txt''
+	\end{verbatim}
+	Ora creiamo un altro collegamento a quel repository
+	\begin{verbatim}
+	svn co file:///path/to/the/repo/ProvaRepo a/path/ProvaRepo2
+	\end{verbatim}
+	E modifichiamo il file prova e committiamo i cambiamenti
+	\begin{verbatim}
+	svn commit -m ``changed file prova.txt''
+	\end{verbatim}
+	Ora torniamo sul repo originale, modifichiamo il file prova e dando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	Otterremo un conflitto
+
 	\paragraph{Risolvere manualmente un conflitto e committare}
 	
 	\paragraph{Cancellare le modifiche dopo averle committate}
