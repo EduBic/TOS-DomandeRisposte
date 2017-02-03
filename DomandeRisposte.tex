@@ -235,8 +235,8 @@
 	\section{SVN}
 	
 	\paragraph{Creare un repository SVN}: \\
-	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}.
-	Nel server, si dovrà dare il comando:
+	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}. In realtà è possibile avere un repository con percorso locale, il che è l'ideale per imparare a utilizzare Subversion.\\
+	Si dovrà dare il comando:
 	\begin{verbatim}
 	svnadmin create <path>
 	\end{verbatim}
@@ -247,12 +247,6 @@
 	svn checkout <url> <path>
 	\end{verbatim}
 	dove \textit{<url>} è la posizione del repository, mentre \textit{<path>} è il percorso LOCALE nel quale vogliamo copiarlo.
-	Poniamo ad esempio di avere un repository nella cartella \textit{folder}, situata nel localhost.
-	In locale, daremo il seguente comando:
-	\begin{verbatim}
-	svn co localhost/folder <path>
-	\end{verbatim}
-	dove co è l'abbreviazione di checkout.\\
 	Rispetto a clone di git, con checkout di svn è possibile copiare delle cartelle o singoli file del repo, semplicemente specificandone il percorso nel server.
 	
 	\paragraph{Mostrare un ciclo modifica -> commit -> update}
@@ -274,10 +268,12 @@
 		\begin{verbatim}
 		svn status
 		\end{verbatim}
+		Per mostrane l'uso si può modificare un file, NON committarlo e poi dare status.
 		\item revert: vengono annullate le ultime modifiche in locale.
 		\begin{verbatim}
 		svn revert
 		\end{verbatim}
+		Per mostrarne l'uso si può fare l'update, fare delle modifiche ai file e poi dare revert.
 	\end{itemize}
 	\paragraph{Quali sono le opzioni di svn status?}: \\
 	In \textbf{grassetto} sono evidenziati quelli importanti.
