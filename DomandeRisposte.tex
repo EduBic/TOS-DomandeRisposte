@@ -248,8 +248,8 @@
 	\section{SVN}
 	
 	\paragraph{Creare un repository SVN}: \\
-	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}.
-	Nel server, si dovrà dare il comando:
+	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}. In realtà è possibile avere un repository con percorso locale, il che è l'ideale per imparare a utilizzare Subversion.\\
+	Si dovrà dare il comando:
 	\begin{verbatim}
 	svnadmin create <path>
 	\end{verbatim}
@@ -260,12 +260,6 @@
 	svn checkout <url> <path>
 	\end{verbatim}
 	dove \textit{<url>} è la posizione del repository, mentre \textit{<path>} è il percorso LOCALE nel quale vogliamo copiarlo.
-	Poniamo ad esempio di avere un repository nella cartella \textit{folder}, situata nel localhost.
-	In locale, daremo il seguente comando:
-	\begin{verbatim}
-	svn co localhost/folder <path>
-	\end{verbatim}
-	dove co è l'abbreviazione di checkout.\\
 	Rispetto a clone di git, con checkout di svn è possibile copiare delle cartelle o singoli file del repo, semplicemente specificandone il percorso nel server.
 	
 	\paragraph{Mostrare un ciclo modifica -> commit -> update}
@@ -287,10 +281,12 @@
 		\begin{verbatim}
 		svn status
 		\end{verbatim}
-		\item revert: vengono annullate le ultime modifiche in locale, in particolare i file in locale tornano alla stessa versione del server.
+		Per mostrane l'uso si può modificare un file, NON committarlo e poi dare status.
+		\item revert: vengono annullate le ultime modifiche in locale.
 		\begin{verbatim}
 		svn revert
 		\end{verbatim}
+		Per mostrarne l'uso si può fare l'update, fare delle modifiche ai file e poi dare revert.
 	\end{itemize}
 	\paragraph{Quali sono le opzioni di svn status?}: \\
 	In \textbf{grassetto} sono evidenziati quelli importanti.
@@ -366,11 +362,51 @@
 	\begin{verbatim}
 	svn propset svn:ignore -F svnignore.txt
 	\end{verbatim}
+
 	\paragraph{Ottenere conflitti tra due utenti}
-	
+	Per prima cosa creiamo un repository e aggiungiamo un file:
+	\begin{verbatim}
+	svnadmin create ProvaRepo
+	svn co file:///path/to/the/repo/ProvaRepo
+	gedit prova.txt (per esempio per creare un file e metterci dentro qualcosa per esempio la stringa ``prova'')
+	svn add prova.txt
+	svn commit -m ``committed file prova.txt''
+	\end{verbatim}
+	Ora creiamo un altro collegamento a quel repository
+	\begin{verbatim}
+	svn co file:///path/to/the/repo/ProvaRepo a/path/ProvaRepo2
+	\end{verbatim}
+	E modifichiamo il file prova e committiamo i cambiamenti
+	\begin{verbatim}
+	svn commit -m ``changed file prova.txt''
+	\end{verbatim}
+	Ora torniamo sul repo originale, modifichiamo il file prova e dando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	Otterremo un conflitto
+
 	\paragraph{Risolvere manualmente un conflitto e committare}
-	
+	Creiamo un conflitto come nella domanda sopra. Quando viene dato il comando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	E scegliamo come opzione ``p'' (postpone). Ora possiamo aprire il file dove c'è il conflitto con un editor di testo e risolvere il conflitto. Fatto questo diamo il comando
+	\begin{verbatim}
+	svn resolved prova.txt
+	\end{verbatim}
+	Per comunicare al sistema che il conflitto è stato risolto.
+
 	\paragraph{Cancellare le modifiche dopo averle committate}
+	Dare il comando 
+	\begin{verbatim}
+	svn status -v -u
+	\end{verbatim}
+	Che permette di vedere il numero della revisione a cui si è arrivati e successivamente dare il comando
+	\begin{verbatim}
+	svn merge -r n_att:n_prev
+	\end{verbatim}
+	Dove n\_att è il numero della revisione attiale mentre n\_prev è il numero della revisione precedente.
 	
 	\paragraph{Caricare il repository in Internet}
 	
@@ -384,8 +420,126 @@
 	
 	\paragraph{Mostrare come risolvere l'errore "out-of-date"}	
 	
-	
-	
+	\paragraph{Lista riassuntiva dei comandi\\}
+	\begin{verbatim}
+	svnadmin create /usr/local/svn/newrepo
+	\end{verbatim}
+	Crea un repository nuovo in quel path.\\-----
+	\begin{verbatim}
+	svn mkdir file:///usr/local/svn/newrepo -m "messaggio"
+	\end{verbatim}
+	Aggiungo la cartella sotto controllo di versione. Serve il messaggio(-m) in quanto questo comando fa un commit.\\-----
+	\begin{verbatim}
+	svnserve -d
+	\end{verbatim}
+	Lancio il thread demone lato server per rendere disponibile online il repo.\\-----
+	\begin{verbatim}
+	svn import <path> <URL> -m "messaggio"
+	\end{verbatim} 
+	Committa il file <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perchè è, appunto, un commit.\\
+	Dopo questo comando, è obbligatorio fare un checkout, in quanto il repo nel server avrà ora una struttura differente rispetto al working copy locale: abbiamo dei file nel repo remoto che, in locale, non sono sotto controllo di versionamento.\\-----
+	\begin{verbatim}
+	svn checkout <URL> <path> 
+	\end{verbatim}
+	Crea una copia di lavoro dal repo URL in locale nel percorso path.\\-----
+	\begin{verbatim}
+	svn ls
+	\end{verbatim}
+	Elenca i file contenuti nella directory corrente.\\-----
+	\begin{verbatim}
+	svn commit -m "messaggio"
+	\end{verbatim}
+	Commita nel server. Il messaggio è obbligatorio.\\-----
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	Aggiorna la working copy con il repository aggiornato nel server. Questo comando si occupa anche di unire le modifiche locali con quelle nel repository.\\
+	Con l'opzione \textit{-i x} si può tornare alla versione \textit{x} di quel repository.\\
+	Per ogni file aggiornato, sarà riportata una tabella con le seguenti lettere:
+	\begin{itemize}
+		\item A aggiunto
+		\item D, cancellato
+		\item U, aggiornato
+		\item C, conflitto da risolvere
+		\item G, fuse le modifiche, ovvero merge
+		\item E, esistente
+		\item R, sostituito
+	\end{itemize}
+	-----
+	\begin{verbatim}
+	svn add [path]
+	\end{verbatim}
+	Aggiunge un elemento alla working copy e, al primo commit, al repo.\\-----
+	\begin{verbatim}
+	svn delete [path]
+	\end{verbatim}
+	Analogo al comando precedente.\\-----
+	\begin{verbatim}
+	svn copy [source] [destination]
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn move [source] [destinatione]
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn revert [path]
+	\end{verbatim}
+	Annulla tutte le modifiche locali.\\-----\\
+	Dopo aver fatto un \textit{update}, alcuni file potrebbero essere marcati con il flag \textbf{C} (conflitto). È neccessario risolvere il conflitto a mano e, successivamente, dare:
+	\begin{verbatim}
+	svn resolved file.txt
+	\end{verbatim}
+	In questo modo diciamo a SVN che i conflitti sono stati risolti ed è quindi posssibile committare. Quindi, infine, dare:
+	\begin{verbatim}
+	svn commit -m "messaggio"
+	\end{verbatim}
+	-----\\
+	\begin{verbatim}
+	svn status
+	\end{verbatim}
+	Stampa informazioni sui file modificati localmente.
+	\\-----
+	\begin{verbatim}
+	svn diff
+	\end{verbatim}
+	Stampa le differenze apportate ai file modificati.\\-----
+	\begin{verbatim}
+	svn log
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn cat -r x file.txt 
+	\end{verbatim}
+	Viene stampato il contenuto del file alla versione \textit{x}. Senza l'opzione \textit{-r x}, viene stampato il contenuto attuale.\\-----
+	\begin{verbatim}
+	svn list
+	\end{verbatim}
+	Mostra i file nel repository, ma senza che essi vengano scaricati.\\-----
+	\begin{verbatim}
+	svn cleanup
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn merge
+	\end{verbatim}
+	Applica le differenze tra due\\-----
+	\begin{verbatim}
+	svn export URL [path]
+	\end{verbatim}
+	Copia il repository URL senza i file di SVN, ovvero otteniamo il repo non sotto controllo di versione.\\-----
+	\begin{verbatim}
+	svn export path1 path2
+	\end{verbatim}
+	Come il precedente, ma tutto in locale.\\-----
+	\begin{verbatim}
+	svnadmin dump <path> > file.dump
+	\end{verbatim}
+	Backup del repo in <path> nel file.dump.\\-----
+	\begin{verbatim}
+	svnadmin load <path> < file.dump
+	\end{verbatim}
+	Ripristino del repo in <path> dal file.dump
 	\section{Mercurial} % Lo chiede ???
 	
 	\paragraph{Creare un repository Mercurial}
