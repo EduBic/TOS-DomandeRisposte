@@ -322,8 +322,13 @@
 		svnadmin load <path> < repos_backup.dump
 		\end{verbatim}
 	\end{itemize}
+
 	\paragraph{Mostrare come riconoscere se un file è stato modificato}
-	
+	Basta dare il comando 
+	\begin{verbatim}
+		svn status
+	\end{verbatim}
+
 	\paragraph{Eseguire un commit ignorando alcuni file}: \\
 	Si possono commitare file singoli. Poniamo di voler committare tutti i file .html e non quelli .php. Il comando sarà:
 	\begin{verbatim}
@@ -396,15 +401,53 @@
 	Dove n\_att è il numero della revisione attiale mentre n\_prev è il numero della revisione precedente.
 	
 	\paragraph{Caricare il repository in Internet}
+	Creiamo un repository e mettiamo dentro un file
+	\begin{verbatim}
+	svnadmin create /home/zanna/svn/repos/test
+	svn checkout file:///home/zanna/svn/repos/test
+	cd test
+	echo 'Hello, World!' > hello.txt
+	svn add hello.txt
+	svn commit -m "Added a 'hello world' text file."
+	\end{verbatim}
+	Ora andiamo a modificare il file conf/passwd per settare la password di un utente
+	\begin{verbatim}
+	gedit /home/zanna/svn/repos/test/conf/passwd
+	[users] 
+	zanna = password
+	\end{verbatim}
+	Ora andiamo a modificare il file conf/svnserve.conf impostando il file precedentemente modificato come file per le password e impostando i permessi per gli utenti senza password
+	\begin{verbatim}
+	gedit /home/zanna/svn/repos/test/conf/svnserve.conf
+	[general] 
+	anon-access = none 
+	password-db = passwd 
+	realm = prova
+	\end{verbatim}
+	Adesso possiamo far partire il servizio
+	\begin{verbatim}
+	sudo svnserve -d --foreground -r /home/zanna/svn/repos
+	\end{verbatim}
+	Ora quindi è possibile accedere al repository inserendo l'IP della macchina in cui si trova. Nel  nostro caso è nella stessa macchina quindi l'indirizzo è quello del localhost
+	\begin{verbatim}
+	svn checkout svn://127.0.0.1/test
+	\end{verbatim}
 	
 	\paragraph{Accedere al repository da remoto}
+	Penso sia come la domanda sopra
 	
 	\paragraph{Creare dei permessi per l'accesso al repository}
-	
+	Per settare i permessi da remoto si deve:
+	\begin{itemize}
+		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = ''. Nel caso in cui non sia presente è necessario aggiungerla;
+		\item per gli utenti con password è necessario modificar il file conf/authz \textbf{NON SO COME SI SETTINO DI PRECISO}.
+	\end{itemize}
+
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
-	
+
 	\paragraph{Illustrare le conseguenze dell'uso del comando svn update -r}
-	
+	Permette far tornare la working copy alla revisione specificata.
+
 	\paragraph{Mostrare come risolvere l'errore "out-of-date"}	
 	
 	\paragraph{Lista riassuntiva dei comandi\\}
