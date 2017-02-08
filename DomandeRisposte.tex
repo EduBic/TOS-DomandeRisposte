@@ -6,7 +6,8 @@
 
 \begin{document}
 	\section{Credits}
-	Domande fornite da Eduard Bicego. \\
+	Domande fornite da Emanuele Carraro. \\
+	Domande trascritte da Eduard Bicego. \\
 	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.
 	
 	\section{Introduzione al copyright}
@@ -109,7 +110,9 @@
 		\textbf{...continua con l'evoluzione e diffusione di Linux...}
 		
 		
-		\paragraph{Come si è evoluto e diffuso Linux?}		
+		\paragraph{Come si è evoluto e diffuso Linux?}
+		Nel 1990 frequenta l'università di Helsinki, comincia a studiare i testi di Tanenbaum e a modificare MINIX in maniera tale da creare un emulatore di terminale. Tale emulatore può essere considerato come la primissima versione di Linux, poichè prevedeva già due thread, uno per la gestione della tastiera, l'altro per il monitor. Nel 1991, sviluppando ancor di più il terminale e implementando tutte le chiamate POSIX, crea la versione 0.0.1 di Linux. Questa prima versione era rilasciata sotto licenza proprietaria e si chiamava Freax, però il professore che gli permise di caricare tale lavoro sul server gli cambiò nome in Linux. Linus continua successivamente a sviluppare il software ed entra in contrasto anche con Tanenbaum, poichè, infatti, il codice di Minixx era stato rilasciato sotto licenza proprietaria. Nel '92 viene rilasciato Linux 0.12, che si stacca completamente da Minix e adotta come licenza la GPL, con la quale Linus permettè a chiunque di contribuire. Nel 1994 si arriva alla versione 1.0 Linux. \\
+		Grazie all'adozione della GPL come licenza, anche varie aziende si interessarono al progetto di Linus come SUSE o RedHat Software Inc. che crearono le proprie distribuzioni. Successivamente naque anche Debian. 
 	
 	\section{Open source}	
 		\paragraph{Come è nato il movimento Open-Source?}: \\
@@ -149,19 +152,24 @@
 		\paragraph{Cosa relaziona il rilascio del codice sorgente di Netscape a Raymond?}
 		 vedi domanda precedente
 		
+		\paragraph{Chi è Bruce Perence?}
+
+		\paragraph{Parlami della Open Source Definition}
+
 	\section{Creative Commons}
 	
 		\paragraph{Come nasce il primo movimento di Creative Commons?}
 			Nata ufficialmente nel 2001 grazie al prof. Lawrence Lessig, il movimento CC nasce come associazione non lucrativa per diffondere la politica di copyleft anche nelle opere non informatiche (nascevano infatti nuovi formati digitali per la trasmissione di opere artistiche). 
+			
 			Tutto è stato anticipato dalla licenza GNU Free Documentation License (GFDL) che mirava a proteggere la documentazione software, cosa che non avveniva con la sola GPL. Essa garantisce libertà di modifica e regola la distribuzione per grandi quantità imponendo restrizioni sulle redistribuzioni senza modifica e con.
-			% bisogna parlare dei fatti che vengono prima
-			% la perseveranza del copyright dagli anni 60;
-			% l'incontro con la filosofia di Eldred
-			% la volontà di andare contro il Sonny Bono Copyright Extension Act, tale cosa avrebbe tolto la lgee ma non risolto il problema, 
-			% il sito creato da Eldred fu l'ispirazione per la creazione di un nuovo movimento
+			
+			Nel 1990 la legge del diritto d'autore prendeva sempre più piede, il professore di legge Lawrence Lessig aspira ad essere un attivista e pubblico intellettuale e visto che in quegli anni il Web stava esplodendo si fissa a combattere il diritto d'autore sempre più restrittivo e a valorizzare il dominio pubblico come progresso per la cultura umana. 
+			Da un altra parte Eric Eldred, informatico, il quale aveva lavorato anche per software spaziali, mantiene un sito online dove distribuisce i libri non più coperti da diritti d'autore (in particolare la letteratura classica americana). Nel 1998 però viene approvato l'Extension Copyright Act che prolunga la durata del copyright per 20 anni per le opere sotto diritti d'autore. Questo significava per Eldred perdere tutta la letteratura che negli anni a venire sarebbe divenuta di dominio pubblico (prima il copyright durava 75 anni per le imprese e 50 dalla morte degli autori, ora invece era 95 e 70). L'estensione è avvenuta soprattutto dalle spinte della Disney la quale avrebbe perso i diritti sul personaggio di Mickey Mouse (1928, quindi nel 2003 sarebbe divenuto pubblico).
+			Nel 1998 Lessig e Eldred si incontrano ed entrambi sono d'accordo nello sfidare l'atto legale e lo combattono attraverso la legge stessa dichiarandolo anticostituzionale, infatti esso limitava la diffusione della cultura, per salvare infatti il 2\% delle opere ancora utili alle imprese il 98\% delle opere ormai non avevano più un business di vendita perciò sarebbero rimaste non usufruibili.
+			Durante la lotta legale contro il Copyright Extension Act, nascono online comunità per confrontarsi sull'argomento, primo fra tutti il sito openlaw dove si discuteva sul come diffondere le informazione nel mondo. Nel 1996 si ha la pubblicazione della Dichiarazione d'Indipendenza del cyberspazio. Si rivela quindi necessario che il materiale diffuso online e liberamente richiedesse una regolamentazione. Da qui Lessig nel 2001 fonda il movimento CC, un'associazione non lucrativa per regolare la diffusione delle opere che volevano essere distribuite al pubblico dominio.  Intanto la denuncia contro il CEA continua fino alla sconfitta di Lessig-Eldred nel 2003 alla corte suprema.
 		
 		\paragraph{Qualcuno ha guidato il movimento Open Content? Chi sono state le prime persone che si sono battute per questi diritti?}
-		Eric Eldred che voleva combattere la legge sul copyright secondo lui troppo restrittiva e Lawrence Lessig che voleva proteggere il bene comune tramite la legge.
+		Eric Eldred che voleva combattere la legge sul copyright secondo lui troppo restrittiva e Lawrence Lessig che voleva proteggere il bene comune tramite la legge. Vedi risposta precedente.
 		
 		
 	\section{Licenze}
@@ -177,6 +185,7 @@
 				\begin{itemize}
 					\item di distribuzioni non commerciali; e
 					\item in cui il programma è stato ottenuto sotto forma di codice oggetto o eseguibile in accordo al precedente comma.
+				\end{itemize}
 			\end{itemize}
 		
 			\paragraph{Nel caso di sorgenti modificati quali sono gli obblighi? (Illustrare nel testo)}
@@ -250,8 +259,8 @@
 	\section{SVN}
 	
 	\paragraph{Creare un repository SVN}: \\
-	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}.
-	Nel server, si dovrà dare il comando:
+	Subversion è un sistema di versionamento centralizzato, ergo è necessario che il repository alloggi su un server. Noi lavoreremo in locale, ergo il server è \textit{localhost}. In realtà è possibile avere un repository con percorso locale, il che è l'ideale per imparare a utilizzare Subversion.\\
+	Si dovrà dare il comando:
 	\begin{verbatim}
 	svnadmin create <path>
 	\end{verbatim}
@@ -262,12 +271,6 @@
 	svn checkout <url> <path>
 	\end{verbatim}
 	dove \textit{<url>} è la posizione del repository, mentre \textit{<path>} è il percorso LOCALE nel quale vogliamo copiarlo.
-	Poniamo ad esempio di avere un repository nella cartella \textit{folder}, situata nel localhost.
-	In locale, daremo il seguente comando:
-	\begin{verbatim}
-	svn co localhost/folder <path>
-	\end{verbatim}
-	dove co è l'abbreviazione di checkout.\\
 	Rispetto a clone di git, con checkout di svn è possibile copiare delle cartelle o singoli file del repo, semplicemente specificandone il percorso nel server.
 	
 	\paragraph{Mostrare un ciclo modifica -> commit -> update}
@@ -289,10 +292,12 @@
 		\begin{verbatim}
 		svn status
 		\end{verbatim}
-		\item revert: vengono annullate le ultime modifiche in locale, in particolare i file in locale tornano alla stessa versione del server.
+		Per mostrane l'uso si può modificare un file, NON committarlo e poi dare status.
+		\item revert: vengono annullate le ultime modifiche in locale.
 		\begin{verbatim}
 		svn revert
 		\end{verbatim}
+		Per mostrarne l'uso si può fare l'update, fare delle modifiche ai file e poi dare revert.
 	\end{itemize}
 	\paragraph{Quali sono le opzioni di svn status?}: \\
 	In \textbf{grassetto} sono evidenziati quelli importanti.
@@ -341,8 +346,13 @@
 		svnadmin load <path> < repos_backup.dump
 		\end{verbatim}
 	\end{itemize}
+
 	\paragraph{Mostrare come riconoscere se un file è stato modificato}
-	
+	Basta dare il comando 
+	\begin{verbatim}
+		svn status
+	\end{verbatim}
+
 	\paragraph{Eseguire un commit ignorando alcuni file}: \\
 	Si possono commitare file singoli. Poniamo di voler committare tutti i file .html e non quelli .php. Il comando sarà:
 	\begin{verbatim}
@@ -368,26 +378,240 @@
 	\begin{verbatim}
 	svn propset svn:ignore -F svnignore.txt
 	\end{verbatim}
+
 	\paragraph{Ottenere conflitti tra due utenti}
-	
+	Per prima cosa creiamo un repository e aggiungiamo un file:
+	\begin{verbatim}
+	svnadmin create ProvaRepo
+	svn co file:///path/to/the/repo/ProvaRepo
+	gedit prova.txt (per esempio per creare un file e metterci dentro qualcosa per esempio la stringa ``prova'')
+	svn add prova.txt
+	svn commit -m ``committed file prova.txt''
+	\end{verbatim}
+	Ora creiamo un altro collegamento a quel repository
+	\begin{verbatim}
+	svn co file:///path/to/the/repo/ProvaRepo a/path/ProvaRepo2
+	\end{verbatim}
+	E modifichiamo il file prova e committiamo i cambiamenti
+	\begin{verbatim}
+	svn commit -m ``changed file prova.txt''
+	\end{verbatim}
+	Ora torniamo sul repo originale, modifichiamo il file prova e dando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	Otterremo un conflitto
+
 	\paragraph{Risolvere manualmente un conflitto e committare}
-	
+	Creiamo un conflitto come nella domanda sopra. Quando viene dato il comando 
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	E scegliamo come opzione ``p'' (postpone). Ora possiamo aprire il file dove c'è il conflitto con un editor di testo e risolvere il conflitto. Fatto questo diamo il comando
+	\begin{verbatim}
+	svn resolved prova.txt
+	\end{verbatim}
+	Per comunicare al sistema che il conflitto è stato risolto.
+
 	\paragraph{Cancellare le modifiche dopo averle committate}
+	Dare il comando 
+	\begin{verbatim}
+	svn status -v -u
+	\end{verbatim}
+	Che permette di vedere il numero della revisione a cui si è arrivati e successivamente dare il comando
+	\begin{verbatim}
+	svn merge -r n_att:n_prev
+	\end{verbatim}
+	Dove n\_att è il numero della revisione attiale mentre n\_prev è il numero della revisione precedente.
 	
 	\paragraph{Caricare il repository in Internet}
+	Creiamo un repository e mettiamo dentro un file
+	\begin{verbatim}
+	svnadmin create /home/zanna/svn/repos/test
+	svn checkout file:///home/zanna/svn/repos/test
+	cd test
+	echo 'Hello, World!' > hello.txt
+	svn add hello.txt
+	svn commit -m "Added a 'hello world' text file."
+	\end{verbatim}
+	Ora andiamo a modificare il file conf/passwd per settare la password di un utente
+	\begin{verbatim}
+	gedit /home/zanna/svn/repos/test/conf/passwd
+	[users] 
+	zanna = password
+	\end{verbatim}
+	Ora andiamo a modificare il file conf/svnserve.conf impostando il file precedentemente modificato come file per le password e impostando i permessi per gli utenti senza password
+	\begin{verbatim}
+	gedit /home/zanna/svn/repos/test/conf/svnserve.conf
+	[general] 
+	anon-access = none 
+	password-db = passwd 
+	realm = prova
+	\end{verbatim}
+	Adesso possiamo far partire il servizio
+	\begin{verbatim}
+	sudo svnserve -d --foreground -r /home/zanna/svn/repos
+	\end{verbatim}
+	Ora quindi è possibile accedere al repository inserendo l'IP della macchina in cui si trova. Nel  nostro caso è nella stessa macchina quindi l'indirizzo è quello del localhost
+	\begin{verbatim}
+	svn checkout svn://127.0.0.1/test
+	\end{verbatim}
 	
 	\paragraph{Accedere al repository da remoto}
+	Penso sia come la domanda sopra
 	
 	\paragraph{Creare dei permessi per l'accesso al repository}
-	
+	Per settare i permessi da remoto si deve:
+	\begin{itemize}
+		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = ''. Nel caso in cui non sia presente è necessario aggiungerla;
+		\item per gli utenti con password è necessario modificar il file conf/authz \textbf{NON SO COME SI SETTINO DI PRECISO}.
+	\end{itemize}
+
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
-	
+
 	\paragraph{Illustrare le conseguenze dell'uso del comando svn update -r}
-	
-	\paragraph{Mostrare come risolvere l'errore "out-of-date"}	
-	
-	
-	
+	Permette far tornare la working copy alla revisione specificata.
+
+	\paragraph{Mostrare come risolvere l'errore "out-of-date"}
+
+	\paragraph{Illustrare come è possibile evitare i conflitti tra utenti differenti su di un file}
+	È possibile utilizzare
+	\begin{verbatim}
+	svn lock nome_file
+	\end{verbatim}
+	e per sbloccare 
+	\begin{verbatim}
+	svn unlock nome_file
+	\end{verbatim}
+	Lock e unlock sono 2 dei pochi comandi di cui \textbf{NON} è necessario fare il push perchè siano propagati al repository.
+	È comunque possibile rubare il lock di qualcun altro con
+	\begin{verbatim}
+	svn unlock --force nome_file
+	\end{verbatim}
+
+	\paragraph{Se dovessi utilizzare un hook per impedire ad un utente di fare un commit, che hook useresti?} O un hook pre-commit oppure un hook start-commit.
+
+	\paragraph{Lista riassuntiva dei comandi\\}
+	\begin{verbatim}
+	svnadmin create /usr/local/svn/newrepo
+	\end{verbatim}
+	Crea un repository nuovo in quel path.\\-----
+	\begin{verbatim}
+	svn mkdir file:///usr/local/svn/newrepo -m "messaggio"
+	\end{verbatim}
+	Aggiungo la cartella sotto controllo di versione. Serve il messaggio(-m) in quanto questo comando fa un commit.\\-----
+	\begin{verbatim}
+	svnserve -d
+	\end{verbatim}
+	Lancio il thread demone lato server per rendere disponibile online il repo.\\-----
+	\begin{verbatim}
+	svn import <path> <URL> -m "messaggio"
+	\end{verbatim} 
+	Committa il file <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perchè è, appunto, un commit.\\
+	Dopo questo comando, è obbligatorio fare un checkout, in quanto il repo nel server avrà ora una struttura differente rispetto al working copy locale: abbiamo dei file nel repo remoto che, in locale, non sono sotto controllo di versionamento.\\-----
+	\begin{verbatim}
+	svn checkout <URL> <path> 
+	\end{verbatim}
+	Crea una copia di lavoro dal repo URL in locale nel percorso path.\\-----
+	\begin{verbatim}
+	svn ls
+	\end{verbatim}
+	Elenca i file contenuti nella directory corrente.\\-----
+	\begin{verbatim}
+	svn commit -m "messaggio"
+	\end{verbatim}
+	Commita nel server. Il messaggio è obbligatorio.\\-----
+	\begin{verbatim}
+	svn update
+	\end{verbatim}
+	Aggiorna la working copy con il repository aggiornato nel server. Questo comando si occupa anche di unire le modifiche locali con quelle nel repository.\\
+	Con l'opzione \textit{-i x} si può tornare alla versione \textit{x} di quel repository.\\
+	Per ogni file aggiornato, sarà riportata una tabella con le seguenti lettere:
+	\begin{itemize}
+		\item A aggiunto
+		\item D, cancellato
+		\item U, aggiornato
+		\item C, conflitto da risolvere
+		\item G, fuse le modifiche, ovvero merge
+		\item E, esistente
+		\item R, sostituito
+	\end{itemize}
+	-----
+	\begin{verbatim}
+	svn add [path]
+	\end{verbatim}
+	Aggiunge un elemento alla working copy e, al primo commit, al repo.\\-----
+	\begin{verbatim}
+	svn delete [path]
+	\end{verbatim}
+	Analogo al comando precedente.\\-----
+	\begin{verbatim}
+	svn copy [source] [destination]
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn move [source] [destinatione]
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn revert [path]
+	\end{verbatim}
+	Annulla tutte le modifiche locali.\\-----\\
+	Dopo aver fatto un \textit{update}, alcuni file potrebbero essere marcati con il flag \textbf{C} (conflitto). È neccessario risolvere il conflitto a mano e, successivamente, dare:
+	\begin{verbatim}
+	svn resolved file.txt
+	\end{verbatim}
+	In questo modo diciamo a SVN che i conflitti sono stati risolti ed è quindi posssibile committare. Quindi, infine, dare:
+	\begin{verbatim}
+	svn commit -m "messaggio"
+	\end{verbatim}
+	-----\\
+	\begin{verbatim}
+	svn status
+	\end{verbatim}
+	Stampa informazioni sui file modificati localmente.
+	\\-----
+	\begin{verbatim}
+	svn diff
+	\end{verbatim}
+	Stampa le differenze apportate ai file modificati.\\-----
+	\begin{verbatim}
+	svn log
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn cat -r x file.txt 
+	\end{verbatim}
+	Viene stampato il contenuto del file alla versione \textit{x}. Senza l'opzione \textit{-r x}, viene stampato il contenuto attuale.\\-----
+	\begin{verbatim}
+	svn list
+	\end{verbatim}
+	Mostra i file nel repository, ma senza che essi vengano scaricati.\\-----
+	\begin{verbatim}
+	svn cleanup
+	\end{verbatim}
+	-----
+	\begin{verbatim}
+	svn merge
+	\end{verbatim}
+	Applica le differenze tra due\\-----
+	\begin{verbatim}
+	svn export URL [path]
+	\end{verbatim}
+	Copia il repository URL senza i file di SVN, ovvero otteniamo il repo non sotto controllo di versione.\\-----
+	\begin{verbatim}
+	svn export path1 path2
+	\end{verbatim}
+	Come il precedente, ma tutto in locale.\\-----
+	\begin{verbatim}
+	svnadmin dump <path> > file.dump
+	\end{verbatim}
+	Backup del repo in <path> nel file.dump.\\-----
+	\begin{verbatim}
+	svnadmin load <path> < file.dump
+	\end{verbatim}
+	Ripristino del repo in <path> dal file.dump
+
 	\section{Mercurial} % Lo chiede ???
 	
 	\paragraph{Creare un repository Mercurial}
