@@ -152,6 +152,10 @@
 		\paragraph{Cosa relaziona il rilascio del codice sorgente di Netscape a Raymond?}
 		 vedi domanda precedente
 		
+		\paragraph{Chi è Bruce Perence?}
+
+		\paragraph{Parlami della Open Source Definition}
+
 	\section{Creative Commons}
 	
 		\paragraph{Come nasce il primo movimento di Creative Commons?}
@@ -462,8 +466,25 @@
 	\paragraph{Illustrare le conseguenze dell'uso del comando svn update -r}
 	Permette far tornare la working copy alla revisione specificata.
 
-	\paragraph{Mostrare come risolvere l'errore "out-of-date"}	
-	
+	\paragraph{Mostrare come risolvere l'errore "out-of-date"}
+
+	\paragraph{Illustrare come è possibile evitare i conflitti tra utenti differenti su di un file}
+	È possibile utilizzare
+	\begin{verbatim}
+	svn lock nome_file
+	\end{verbatim}
+	e per sbloccare 
+	\begin{verbatim}
+	svn unlock nome_file
+	\end{verbatim}
+	Lock e unlock sono 2 dei pochi comandi di cui \textbf{NON} è necessario fare il push perchè siano propagati al repository.
+	È comunque possibile rubare il lock di qualcun altro con
+	\begin{verbatim}
+	svn unlock --force nome_file
+	\end{verbatim}
+
+	\paragraph{Se dovessi utilizzare un hook per impedire ad un utente di fare un commit, che hook useresti?} O un hook pre-commit oppure un hook start-commit.
+
 	\paragraph{Lista riassuntiva dei comandi\\}
 	\begin{verbatim}
 	svnadmin create /usr/local/svn/newrepo
@@ -584,6 +605,7 @@
 	svnadmin load <path> < file.dump
 	\end{verbatim}
 	Ripristino del repo in <path> dal file.dump
+
 	\section{Mercurial} % Lo chiede ???
 	
 	\paragraph{Creare un repository Mercurial}
