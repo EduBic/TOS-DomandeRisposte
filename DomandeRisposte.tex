@@ -375,25 +375,35 @@
 	\end{verbatim}
 
 	\paragraph{Ottenere conflitti tra due utenti}
-	Per prima cosa creiamo un repository e aggiungiamo un file:
+	Per prima cosa creiamo un repository
 	\begin{verbatim}
 	svnadmin create ProvaRepo
-	svn co file:///path/to/the/repo/ProvaRepo
-	gedit prova.txt (per esempio per creare un file e metterci dentro qualcosa per esempio la stringa ``prova'')
+	\end{verbatim}
+	Ora cloniamo il file in una cartella che simula un utente A e creiamo
+	il file \verb|prova.txt|:
+	\begin{verbatim}
+	svn co file:///path/to/the/repo/ProvaRepo A/
+	#In alternativa se il file è nella stessa cartella: svn co file://$PWD/ProvaRepo 
+	cd A/
+	echo "A" > prova.txt 
 	svn add prova.txt
-	svn commit -m ``committed file prova.txt''
+	svn commit -m "committed file prova.txt"
+	cd ..
 	\end{verbatim}
-	Ora creiamo un altro collegamento a quel repository
+	Ora creiamo un altro collegamento a quel repository, simulando l'utente B:
 	\begin{verbatim}
-	svn co file:///path/to/the/repo/ProvaRepo a/path/ProvaRepo2
+	svn co file:///path/to/the/repo/ProvaRepo B/
+	cd B/
+	echo "B" >> prova.txt
+	svn commit -m "changed file prova.txt"
+	cd ..
 	\end{verbatim}
-	E modifichiamo il file prova e committiamo i cambiamenti
+	Ora torniamo nella cartella dell'utente A e modifichiamo il file prova e 
+	committiamo i cambiamenti, per esempio:
 	\begin{verbatim}
-	svn commit -m ``changed file prova.txt''
-	\end{verbatim}
-	Ora torniamo sul repo originale, modifichiamo il file prova e dando 
-	\begin{verbatim}
-	svn update
+	cd A/
+	echo "A" >> prova.txt
+	svn commit -m "changed file prova.txt"
 	\end{verbatim}
 	Otterremo un conflitto
 
@@ -459,7 +469,7 @@
 	Per settare i permessi da remoto si deve:
 	\begin{itemize}
 		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = ''. Nel caso in cui non sia presente è necessario aggiungerla;
-		\item per gli utenti con password è necessario modificar il file conf/authz \textbf{NON SO COME SI SETTINO DI PRECISO}.
+		\item per gli utenti con password è necessario modificare il file conf/authz \textbf{NON SO COME SI SETTINO DI PRECISO}.
 	\end{itemize}
 
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
@@ -606,23 +616,6 @@
 	svnadmin load <path> < file.dump
 	\end{verbatim}
 	Ripristino del repo in <path> dal file.dump
-
-	\section{Mercurial} % Lo chiede ???
-	
-	\paragraph{Creare un repository Mercurial}
-	
-	\paragraph{Operazioni per configurare un repository Mercurial}
-	
-	\paragraph{Aggiungere un file al repository e poi commentarlo}	
-	
-	\paragraph{Eseguire un commit}
-	
-	\paragraph{Fare una modifica ad un file di testo e committarlo}
-	
-	\paragraph{Fare revert di una modifica committata}
-	
-	\paragraph{Rimuovere una cartella e committare}
-	
 	
 	
 \end{document}
