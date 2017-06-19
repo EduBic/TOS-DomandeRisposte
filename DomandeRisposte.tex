@@ -536,8 +536,14 @@
 	\begin{verbatim}
 	svn import <path> <URL> -m "messaggio"
 	\end{verbatim} 
-	Committa il file <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perchè è, appunto, un commit.\\
-	Dopo questo comando, è obbligatorio fare un checkout, in quanto il repo nel server avrà ora una struttura differente rispetto al working copy locale: abbiamo dei file nel repo remoto che, in locale, non sono sotto controllo di versionamento.\\-----
+	Committa il sottoalbero <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perchè è, appunto, un commit.\\
+	Dopo questo comando, è obbligatorio fare un checkout, in quanto il repo nel server avrà ora una struttura differente rispetto al working copy locale: 
+	abbiamo dei file nel repo remoto che, in locale, non sono sotto controllo di versionamento.\\
+	\\
+	\textbf{N.B.} Se \verb|<path>| è un file singolo bisogna specificare alla fine dell'URL la destinazione del file, mentre
+	per una cartella non è necessario.
+	
+	-----
 	\begin{verbatim}
 	svn checkout <URL> <path> 
 	\end{verbatim}
@@ -546,6 +552,10 @@
 	svn ls
 	\end{verbatim}
 	Elenca i file contenuti nella directory corrente.\\-----
+	\begin{verbatim}
+	svn ls <URL> -Rv
+	\end{verbatim}
+	Elenca i file contenuti nel repository ricorsivamente con informazioni aggiuntive (recursive + verbose)\\-----
 	\begin{verbatim}
 	svn commit -m "messaggio"
 	\end{verbatim}
@@ -607,7 +617,8 @@
 	\begin{verbatim}
 	svn log
 	\end{verbatim}
-	-----
+	\textbf{N.B.} Se il server centrale non è attivo questo comando non funziona.
+	\\-----
 	\begin{verbatim}
 	svn cat -r x file.txt 
 	\end{verbatim}
