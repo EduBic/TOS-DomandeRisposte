@@ -4,6 +4,9 @@
 \usepackage[italian]{babel}
 
 
+\renewcommand{\theparagraph}{\arabic{paragraph}}
+\setcounter{secnumdepth}{4}
+
 \begin{document}
 	\section{Credits}
 	Domande fornite da Emanuele Carraro. \\
@@ -14,7 +17,7 @@
 	
 	\section{Introduzione al copyright}
 	
-		\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}:\\
+		\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}: \\
 		Un editto è un'ordinanza emanata da un'autorità.
 		Il copyright è l'insieme delle leggi sul diritto d'autore.
 		Per proto-copyright s'intende l'insieme di privilegi ed editti che furono stabiliti ed emanati nella Venezia a cavallo del 1400 e del 1500, al fine di proteggere le opere, le modifiche ad esse, i loro autori e i meccanismi di produzione.
@@ -42,7 +45,56 @@
 		creazioni intangibili e non più le copie come precedentemente. Le licenze passano dagli stampatori agli autori dei libri. L'autore ha 14 anni di protezione con la possibilità di estendere per altri 14 anni tale protezione. In questo modo, al massimo, un autore poteva proteggere una copia per 28 anni e, al termine, l'opera diventava di dominio pubblico.
 	
 	\section{Nascita del progetto GNU}
-
+		\paragraph{Come Nasce il Movimento Hacker?}: \\ 
+		Il primo nucleo della cultura Hacker nasce tra gli anni '50 e 
+		'60 nei laboratori del MIT tra i ragazzi del Tech Model Railboard
+		Club. In particolare i ragazzi del sottogruppo Signal \& Power 
+		che si occupavano della circuiteria della rete dei modelli di treni.
+		Nel 1959 McCarthy tiene il primo corso di Intelligenza artificiale.
+		Si hanno i primi Hack sull'IBM 704 e l'IBM 407, tramite 
+		programmazione non interattiva. 
+		Successivamente si usa anche il TX-0, che aveva a disposizione
+		4 istruzioni per cui gli hacks erano fondamentali per
+		rendere i programmi efficienti. 
+		
+		Le caratteristiche principali di questo movimento erano la 
+		giocosità, la condivisione degli sforzi di gruppo il lavoro
+		notturno e l'apertura agli estranei (capaci) come Peter Deutsch,
+		che quando entrò nel gruppo degli hacker aveva solo 11 anni.
+		
+		Successivamente l'università acquista un PDP-1, il primo
+		computer concentrato sull'utente invece che sull'utilizzo
+		delle risorse (Il computer su cui fu scritto il primo 
+		videogioco, Space War!, di Russel). Questo computer
+		era basato su TX-0 e TX-2. Si ha un rafforzamento della 
+		comunità hacker, anche grazie ad arpanet.
+		
+		Insieme al PDP-10 arriva anche il Time-Sharing, un sistema
+		operativo in cui più utenti possono usare il computer
+		concorrentemente. Il Time-Sharing era mal visto dagli hacker
+		perché avevano bisogno di tutta la potenza di calcolo per eseguire
+		alcuni programmi (come il simulatore per la metro di NY) e inoltre
+		ricordava Multics (aveva troppi standard di sicurezza) e CTSS.
+		
+		Alla fine giungono ad un compromesso sul timesharing: timesharing
+		durante il giorno e single mode durante la notte. Viene sviluppato
+		da Greenblatt e Nelson l'incompatible time-sharing. Questo
+		sistema operativo permetteva di accedere da terminali diversi, 
+		erano assenti i permessi e non c'erano password.
+		
+		Nel 1968 si hanno le prime avvisaglie di crisi: da un lato
+		le proteste contro il laboratorio (per via della guerra in vietnam) e per
+		il fatto che emerse che i laboratori erano finanziati dal ministero
+		della difesa. Per evitare che la gente entrasse nei laboratori
+		del MIT vennero cambiate le porte (di fatto barricate) per proteggere
+		i computer dai manifestanti. Quello della chiusura verso l'esterno
+		con delle porte è una contraddizione con la filosofia hacker. 
+		Inoltre le misure di sicurezza rimasero anche dopo le manifestazioni.
+		
+		La fine del movimento hacker si può trovare nella risposta
+		alla domanda \ref{par:hacker:fine}.
+		 
+		
 		\paragraph{Chi è Richard Stallman?}: \\
 		Nato nel 1953, Stallman è uno dei principali esponenti del movimento del software libero.
 		Negli anni '70, Stallman entra a far parte dell'IBM New York Scientific Center, un gruppo di ricerca nell'ambito della computer science. Stallman passò qui l'estate dopo il diploma di scuola superiore sviluppando programmi in Fortran per il calcolo numerico. Al tempo non era ancora un informatico, ovviamente, ma se ne voleva interessare.\\
@@ -99,6 +151,7 @@
 		Emacs nasce come un insieme di MACRO per TECO per il miglioramento del display e il realtime random access editing. Poi divenne un editor di testo a sè stante.
 		
 		\paragraph{Durante la fine del periodo hacker (anni '70), che cosa fa crollare tutto? Chi e perché si organizza uno sciopero?}
+		\label{par:hacker:fine}
 		Durante la fine degli anni '70 inizia la fine del periodo hacker. Una delle prime fratture si creò quando al MIT vennero messe le password per l'accesso ai computer dei laboratori. Stallman cerca di convincere le altre persone a limitarne l’utilizzo, e a permettere agli altri utenti di utilizzare i file di tutti. Ciò porta l’intervento del ministero della Difesa, che obbliga l'utilizzo di password. Ciò aliena la comunità vicino a Stallman, anche a causa dell’introduzione dello sciopero del software: Stallman non vuole concedere le ultime versioni di Emacs al laboratorio dell'MIT finché non venissero tolti tutti i sistemi di sicurezza. \\
 		Successivamente, negli anni '70-'80 ha una frammentazione della cultura hacker, causata dal fatto che gli Hacker originari abbandonano il MIT per lavorare o aprire la propria azienda. Si ha un cambiamento dei visitatori al MIT, e con essi cominciano a essere presenti i primi programmi protetti da copyright nel laboratorio di intelligenza artificiale. \\
 		La nascita della lisp machine causa la crisi finale. Dall’idea avuta da Greenblat, viene costruita una macchina concepita per funzionare in sintonia con Lisp, ed ebbe un buon successo. Con i copiosi fondi del progetto, al MIT vennero prodotte 32 macchine, che si voleva far comunicare in rete per favorirne la condivisione. Ciò porta Greenblat all’idea di creare un’azienda “hacker friendly” per la produzione di lisp machine. Greenblat si scontrò con Russel Noftsker, che propone, invece, di creare un’azienda “per azioni” e renderla prettamente commerciale. Viene raggiunto un accordo tra i due: a Greenblat viene dato un anno di tempo per creare un’azienda per la vendita di lisp machines. Allo scadere dell'anno, se Greenblat non cci fosse riuscito allora Nofsker avrebbe creato l'azienda. Greenblat ci ci riesce e crea la LMI ma nonostante ciò viene creata un’altra azienda da Nofsker, la Symbolics. Ciò causò causo lo svuotamento del MIT poiché le due aziende attinsero dal MIT per cercare sviluppatori. Inizialmente le due aziende utilizzavano un sistema operativo comune e concessero al MIT di utilizzarlo, ma nel 1982 la Symbolics introdusse delle modifiche al tala sistema operativo e le rese proprietarie. Ciò causo l'ira di Stallman che si mise a replicare le nuove funzionalità per donarle alla LMI. Ciò non fece altro, però, che indebolire la Symbolics. In tutto questo la comunità hacker si indebolisce sempre più, orfana dei fondatori del movimento e incapace di mantenere l'ITS all'interno dei laboratori del MIT. Il crollo definitivo si ha quando nei laboratori l'ITS, diventato ormai obsoleto e poco sicuro, viene sostituito da Tweenex, un software proprietario.
