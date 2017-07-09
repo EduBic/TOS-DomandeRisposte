@@ -4,20 +4,24 @@
 \usepackage[italian]{babel}
 
 
+\renewcommand{\theparagraph}{\arabic{paragraph}}
+\setcounter{secnumdepth}{4}
+
 \begin{document}
 	\section{Credits}
 	Domande fornite da Emanuele Carraro. \\
 	Domande trascritte da Eduard Bicego. \\
 	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.\\
-	
+	Piccole revisioni Mirko Bez \\
+	Domanda sul movimento Hacker aggiunta da Mirko Bez \\
 	
 	\section{Introduzione al copyright}
 	
-		\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}:\\
+		\paragraph{Raccontare gli eventi che portarono la nascita degli editti a Venezia (proto-copyright)}: \\
 		Un editto è un'ordinanza emanata da un'autorità.
 		Il copyright è l'insieme delle leggi sul diritto d'autore.
 		Per proto-copyright s'intende l'insieme di privilegi ed editti che furono stabiliti ed emanati nella Venezia a cavallo del 1400 e del 1500, al fine di proteggere le opere, le modifiche ad esse, i loro autori e i meccanismi di produzione.
-		In realtà, il primo privilegio concesso a Venezia è stato a Johames di Spira(1469), il quale introdusse la stampa a Venezia. Il privilegio, della durata di 5 anni, impediva a chiunque(se non a J. di Spira) di esercitare la stampa o di importare libri all'estero. Esso, però, morì poco dopo che il privilegio gli venne concesso, annullandolo. \\
+		In realtà, il primo privilegio concesso a Venezia è stato a Johannes di Spira(1469), il quale introdusse la stampa a Venezia. Il privilegio, della durata di 5 anni, impediva a chiunque(se non a J. di Spira) di esercitare la stampa o di importare libri all'estero. Esso, però, morì poco dopo che il privilegio gli venne concesso, annullandolo. \\
 		Si noti che questo privilegio protegge il meccanismo di produzione, non l'opera prodotta: veniva tutelata l'esclusiva sulla stampa, ma nulla tutelava l'autore del libro stampato.
 		Insomma, i primi privilegi non proteggevano i diritti dell'autore(nemmeno esistevano), ma l'ente industriale che produceva l'opera.
 		Questo privilegio servì comunque per sottrarre il controllo della stampa alle \textit{corporazioni}, che erano associazioni che regolamentavano e tutelavano l'attività degli artigiani.\\
@@ -25,9 +29,9 @@
 		Il vero cambiamento si ebbe però nel periodo [1517-1537] nel quale le opere presenti caddero nel dominio pubblico. Questo perché fino a questo periodo l'importanza data allo stampatore era ancora dominante su quella data all'autore, generando un mercato di opere dal contenuto fondamentalmente identico ma prodotto da diversi stampatori. A questo punto si capisce che ciò che conta è il contenuto del libro e non la sua forma, dando quindi potere e protezione agli autori.\\
 		Col passare del tempo, i privilegi sugli autori andarono a fortificarsi, e vennero addirittura istituite delle protezioni sulle modifiche alle opere(prima un'opera modificata era considerata come un'opera differente dall'originale).
 		Storicamente, questo è il periodo rinascimentale, nel quale si vuole dare spazio all'uomo e alla sua creatività.
-		La conseguenza di tutto ci fu la nascità del concetto di \textit{nascita immateriale}: le conoscenze di una persona potevano essere importanti.
+		La conseguenza di tutto ci fu la nascita del concetto di \textit{nascita immateriale}: le conoscenze di una persona potevano essere importanti.
 		
-		\paragraph{Chi è Johames di Spira?}: \\ % Domanda incomprensibile
+		\paragraph{Chi è Johann di Spira?}: \\ % Domanda incomprensibile
 		Si veda la domanda sopra.\\
 		Qui la pagina wikipedia:\\
 		Giovanni e Vindelino da Spira (Johann e Wendelin von Speyer; Spira, XV secolo – Venezia, XV secolo) sono stati due tipografi tedeschi, attivi nel XV secolo.
@@ -41,10 +45,60 @@
 		creazioni intangibili e non più le copie come precedentemente. Le licenze passano dagli stampatori agli autori dei libri. L'autore ha 14 anni di protezione con la possibilità di estendere per altri 14 anni tale protezione. In questo modo, al massimo, un autore poteva proteggere una copia per 28 anni e, al termine, l'opera diventava di dominio pubblico.
 	
 	\section{Nascita del progetto GNU}
-
+		\paragraph{Come Nasce il Movimento Hacker?}: \\ 
+		Il primo nucleo della cultura Hacker nasce tra gli anni '50 e 
+		'60 nei laboratori del MIT tra i ragazzi del Tech Model Railboard
+		Club. In particolare i ragazzi del sottogruppo Signal \& Power 
+		che si occupavano della circuiteria della rete dei modelli di treni.
+		Nel 1959 McCarthy tiene il primo corso di Intelligenza artificiale.
+		Si hanno i primi Hack sull'IBM 704 e l'IBM 407, tramite 
+		programmazione non interattiva. 
+		Successivamente si usa anche il TX-0, che aveva a disposizione
+		4 istruzioni per cui gli hacks erano fondamentali per
+		rendere i programmi efficienti. 
+		
+		Le caratteristiche principali di questo movimento erano la 
+		giocosità, la condivisione degli sforzi di gruppo il lavoro
+		notturno e l'apertura agli estranei (capaci) come Peter Deutsch,
+		che quando entrò nel gruppo degli hacker aveva solo 11 anni.
+		
+		Successivamente l'università acquista un PDP-1, il primo
+		computer concentrato sull'utente invece che sull'utilizzo
+		delle risorse (Il computer su cui fu scritto il primo 
+		videogioco, Space War!, di Russel). Questo computer
+		era basato su TX-0 e TX-2. Si ha un rafforzamento della 
+		comunità hacker, anche grazie ad arpanet.
+		
+		Insieme al PDP-10 arriva anche il Time-Sharing, un sistema
+		operativo in cui più utenti possono usare il computer
+		concorrentemente. Il Time-Sharing era mal visto dagli hacker
+		perché avevano bisogno di tutta la potenza di calcolo per eseguire
+		alcuni programmi (come il simulatore per la metro di NY) e inoltre
+		ricordava Multics (aveva troppi standard di sicurezza) e CTSS.
+		
+		Alla fine giungono ad un compromesso sul timesharing: timesharing
+		durante il giorno e single mode durante la notte. Viene sviluppato
+		da Greenblatt e Nelson l'incompatible time-sharing. Questo
+		sistema operativo permetteva di accedere da terminali diversi, 
+		erano assenti i permessi e non c'erano password.
+		
+		Nel 1968 si hanno le prime avvisaglie di crisi: da un lato
+		le proteste contro il laboratorio (per via della guerra in vietnam) e per
+		il fatto che emerse che i laboratori erano finanziati dal ministero
+		della difesa. Per evitare che la gente entrasse nei laboratori
+		del MIT vennero cambiate le porte (di fatto barricate) per proteggere
+		i computer dai manifestanti. Quello della chiusura verso l'esterno
+		con delle porte è una contraddizione con la filosofia hacker. 
+		Inoltre le misure di sicurezza rimasero anche dopo le manifestazioni.
+		
+		La fine del movimento hacker si può trovare nella risposta
+		alla domanda \ref{par:hacker:fine}. 
+		
+		 
+		
 		\paragraph{Chi è Richard Stallman?}: \\
 		Nato nel 1953, Stallman è uno dei principali esponenti del movimento del software libero.
-		Megli anni '70, Stallman entra a far parte dell'IBM New York Scientific Center, un gruppo di ricerca nell'ambito della computer science. Stallman passò qui l'estate dopo il diploma di scuola superiore sviluppando programmi in Fortran per il calcolo numerico. Al tempo non era ancora un informatico, ovviamente, ma se ne voleva interessare.\\
+		Negli anni '70, Stallman entra a far parte dell'IBM New York Scientific Center, un gruppo di ricerca nell'ambito della computer science. Stallman passò qui l'estate dopo il diploma di scuola superiore sviluppando programmi in Fortran per il calcolo numerico. Al tempo non era ancora un informatico, ovviamente, ma se ne voleva interessare.\\
 		Nel 1971 entra ad Harvard, ma si interessa di più al MIT di Boston. Infatti Nel giugno del 1971 al primo anno da studente all'università Harvard, Stallman diventò un programmatore al laboratorio IA (Intelligenza Artificiale) del MIT, assunto da Russ Noftsker come programmatore di sistema. Da qui, prese parte alla comunità degli hacker, lavorando insieme a Richard Greenblatt e Bill Gosper. \\
 		Nel 1980, al MIT c'era una stampante(Xerox 9700) al servizio degli utenti. Essa però non aveva un buon driver e alcuni messaggi d'errore non erano comunicati. In particolare, quando essa si inceppava, l'unico modo per scoprirlo era andare a verificare di persona, perdendo del tempo inutilmente. Essendo programmatore di sistema, Stallman voleva fixare questo problema, ma per farlo doveva avere a disposizione il codice sorgente della stampante in questione. Stallman fece richiesta, ma gli venne negato l'accesso al codice sorgente, impedendogli di fixare il bug.\\
 		Questo fu un fatto che spinse successivamente Stallman a fondare il progetto GNU(GNU is Not Unix).
@@ -98,9 +152,10 @@
 		Emacs nasce come un insieme di MACRO per TECO per il miglioramento del display e il realtime random access editing. Poi divenne un editor di testo a sè stante.
 		
 		\paragraph{Durante la fine del periodo hacker (anni '70), che cosa fa crollare tutto? Chi e perché si organizza uno sciopero?}
-		Durante la fine degli anni '70 inizia la fine del periodo hacker. Una delle prime fratture si creò quando al MIT vennero messe le password per l'accesso ai computer dei laboratori. Stallman cerca di convincere le altre persone a limitarne l’utilizzo, e a permettere agli altri utenti di utilizzare i file di tutti. Ciò porta l’intervento del ministero della Difesa, che obbliga l'utilizzo di password. Ciò aliena la comunità vicino a Stallman, anche a causa dell’introduzione dello sciopero del software: Stallman non vuole concedere le ultime versioni di Emacs al laboratorio dell'MIT finchè non venissero tolti tutti i sistemi di sicurezza. \\
-		Successivamente, negli anni '70-'80 ha una frammentaione della cultura hacker, causata dal fatto che gli Hacker originari abbandonano il MIT per lavorare o aprire la propria azienda. Si ha un cambiamento dei visitatori al MIT, e con essi cominciano a essere presenti i primi programmi protetti da copyright nel laboratorio di intelligenza artificiale. \\
-		La nascita della lisp machine causa la crisi finale. Dall’idea avuta da Greenblat, viene costruita una macchina concepita per funzionare in sintonia con Lisp, ed ebbe un buon successo. Con i copiosi fondi del progetto, al MIT vennero prodotte 32 macchine, che si voleva far comunicare in rete per favorirne la condivisione. Ciò porta Greenblat all’idea di creare un’azienda “hacker friendly” per la produzione di lisp machine. Greenblat si scontrò con Russel Noftsker, che propone, invece, di creare un’azienda “per azioni” e renderla prettamente commerciale. Viene raggiunto un accordo tra i due: a Greenblat viene dato un anno di tempo per creare un’azienda per la vendita di lisp machines. Allo scadere dell'anno, se Greenblat non cci fosse riuscito allora Nofsker avrebbe creato l'azienda. Greenblat ci ci riesce e crea la LMI ma nonostante ciò viene creata un’altra azienda da Nofsker, la Symbolics. Ciò causò causo lo svuotamento del MIT poichè le due aziende attinsero dal MIT per cercare sviluppatori. Inizialmente le due aziende utilizzavano un sistema operativo comune e concessero al MIT di utilizzarlo, ma nel 1982 la Symbolics introdusse delle modifiche al tala sistema operativo e le rese proprietarie. Ciò causo l'ira di Stallman che si mise a replicare le nuove funzionalità per donarle alla LMI. Ciò non fece altro, però, che indebolire la Symbolics. In tutto questo la comunità hacker si indebolisce sempre più, orfana dei fondatori del movimento e incapace di mantenere l'ITS all'interno dei laboratori del MIT. Il crollo definitivo si ha quando nei laboratori l'ITS, diventato ormai obsoleto e poco sicuro, viene sostituito da Tweenex, un software proprietario.
+		\label{par:hacker:fine}
+		Durante la fine degli anni '70 inizia la fine del periodo hacker. Una delle prime fratture si creò quando al MIT vennero messe le password per l'accesso ai computer dei laboratori. Stallman cerca di convincere le altre persone a limitarne l’utilizzo, e a permettere agli altri utenti di utilizzare i file di tutti. Ciò porta l’intervento del ministero della Difesa, che obbliga l'utilizzo di password. Ciò aliena la comunità vicino a Stallman, anche a causa dell’introduzione dello sciopero del software: Stallman non vuole concedere le ultime versioni di Emacs al laboratorio dell'MIT finché non venissero tolti tutti i sistemi di sicurezza. \\
+		Successivamente, negli anni '70-'80 ha una frammentazione della cultura hacker, causata dal fatto che gli Hacker originari abbandonano il MIT per lavorare o aprire la propria azienda. Si ha un cambiamento dei visitatori al MIT, e con essi cominciano a essere presenti i primi programmi protetti da copyright nel laboratorio di intelligenza artificiale. \\
+		La nascita della lisp machine causa la crisi finale. Dall’idea avuta da Greenblat, viene costruita una macchina concepita per funzionare in sintonia con Lisp, ed ebbe un buon successo. Con i copiosi fondi del progetto, al MIT vennero prodotte 32 macchine, che si voleva far comunicare in rete per favorirne la condivisione. Ciò porta Greenblat all’idea di creare un’azienda “hacker friendly” per la produzione di lisp machine. Greenblat si scontrò con Russel Noftsker, che propone, invece, di creare un’azienda “per azioni” e renderla prettamente commerciale. Viene raggiunto un accordo tra i due: a Greenblat viene dato un anno di tempo per creare un’azienda per la vendita di lisp machines. Allo scadere dell'anno, se Greenblat non cci fosse riuscito allora Nofsker avrebbe creato l'azienda. Greenblat ci ci riesce e crea la LMI ma nonostante ciò viene creata un’altra azienda da Nofsker, la Symbolics. Ciò causò causo lo svuotamento del MIT poiché le due aziende attinsero dal MIT per cercare sviluppatori. Inizialmente le due aziende utilizzavano un sistema operativo comune e concessero al MIT di utilizzarlo, ma nel 1982 la Symbolics introdusse delle modifiche al tala sistema operativo e le rese proprietarie. Ciò causo l'ira di Stallman che si mise a replicare le nuove funzionalità per donarle alla LMI. Ciò non fece altro, però, che indebolire la Symbolics. In tutto questo la comunità hacker si indebolisce sempre più, orfana dei fondatori del movimento e incapace di mantenere l'ITS all'interno dei laboratori del MIT. Il crollo definitivo si ha quando nei laboratori l'ITS, diventato ormai obsoleto e poco sicuro, viene sostituito da Tweenex, un software proprietario.
 
 		\paragraph{Chi ha inventato le Lisp machine? Cosa sono? Quali aziende le hanno inventate? Perché queste aziende hanno avuto un impatto sulla comunità hacker?}
 		{per una risposta più completa vedi domanda precedente}
@@ -117,7 +172,7 @@
 		\textit{...In origine era UNIX...}\\
 		All'epoca, UNIX era un sistema operativo affermato. Nella seconda metà degli anni '70 John Lions(sviluppatore australiano) pubblicò "\textit{Lion' commentary on UNIX 6th Edition, with source code}", un'opera che conteneva il sorgente di UNIX 6.0 commentato da Lions. Con l'avvento di UNIX 7.0 vennero però imposte diverse pesanti restrizioni, in particolare l'opera di Lions venne bloccata, aumentarono i costi delle licenze e ne venne limitato l'insegnamento nelle università. Questa non fu una buona mossa, in quanto la forza di UNIX stava nella diffusione nel mondo accademico.\\
 		Questo costrinse alcuni docenti ad adottare delle soluzioni per l'insegnamento, uno dei quali fu Andrew S. Tanenbaum.
-		Tanenmbaum all'epoca era docente di computer science e aveva sempre insegnato basandosi su UNIX. Decise quindi di creare un sistema operativo tutto suo,  minimale, semplice e a solo scopo didattico: nacque così \textbf{MINIX}, un OS ad approccio microkernel rilasciato sotto licenza permissiva ma non libera.
+		Tanenbaum all'epoca era docente di computer science e aveva sempre insegnato basandosi su UNIX. Decise quindi di creare un sistema operativo tutto suo,  minimale, semplice e a solo scopo didattico: nacque così \textbf{MINIX}, un OS ad approccio microkernel rilasciato sotto licenza permissiva ma non libera.
 		Minix aveva però un problema, ovvero non disponeva di un emulatore di terminale.\\
 		Linus Torvald(1969) è stato tra i primi utilizzatori di MINIX. Nel 1990 frequenta l'università di Helsinki, comincia a studiare i testi di Tanenbaum e a modificare MINIX in maniera tale da creare un emulatore di terminale. Nel 1991 scrisse un emulatore di terminale in Assembly e in C dando così vita a Linux (al tempo in realtà si chiamava Freax ed era software proprietario). Da lì venne esteso fino a creare un vero e proprio kernel che poteva supportare un OS (Linux 0.0.1). Vista ormai l'estensione raggiunta, Torvalds decise nel 1992 di "staccare" Linux da MINIX e renderlo indipendente, adottando una licenza differente(la GPL).
 		
@@ -125,8 +180,8 @@
 		
 		
 		\paragraph{Come si è evoluto e diffuso Linux?}
-		Nel 1990 frequenta l'università di Helsinki, comincia a studiare i testi di Tanenbaum e a modificare MINIX in maniera tale da creare un emulatore di terminale. Tale emulatore può essere considerato come la primissima versione di Linux, poichè prevedeva già due thread, uno per la gestione della tastiera, l'altro per il monitor. Nel 1991, sviluppando ancor di più il terminale e implementando tutte le chiamate POSIX, crea la versione 0.0.1 di Linux. Questa prima versione era rilasciata sotto licenza proprietaria e si chiamava Freax, però il professore che gli permise di caricare tale lavoro sul server gli cambiò nome in Linux. Linus continua successivamente a sviluppare il software ed entra in contrasto anche con Tanenbaum, poichè, infatti, il codice di Minixx era stato rilasciato sotto licenza proprietaria. Nel '92 viene rilasciato Linux 0.12, che si stacca completamente da Minix e adotta come licenza la GPL, con la quale Linus permettè a chiunque di contribuire. Nel 1994 si arriva alla versione 1.0 Linux. \\
-		Grazie all'adozione della GPL come licenza, anche varie aziende si interessarono al progetto di Linus come SUSE o RedHat Software Inc. che crearono le proprie distribuzioni. Successivamente naque anche Debian. 
+		Nel 1990 frequenta l'università di Helsinki, comincia a studiare i testi di Tanenbaum e a modificare MINIX in maniera tale da creare un emulatore di terminale. Tale emulatore può essere considerato come la primissima versione di Linux, poiché prevedeva già due thread, uno per la gestione della tastiera, l'altro per il monitor. Nel 1991, sviluppando ancor di più il terminale e implementando tutte le chiamate POSIX, crea la versione 0.0.1 di Linux. Questa prima versione era rilasciata sotto licenza proprietaria e si chiamava Freax, però il professore che gli permise di caricare tale lavoro sul server gli cambiò nome in Linux. Linus continua successivamente a sviluppare il software ed entra in contrasto anche con Tanenbaum, poiché, infatti, il codice di Minixx era stato rilasciato sotto licenza proprietaria. Nel '92 viene rilasciato Linux 0.12, che si stacca completamente da Minix e adotta come licenza la GPL, con la quale Linus permettè a chiunque di contribuire. Nel 1994 si arriva alla versione 1.0 Linux. \\
+		Grazie all'adozione della GPL come licenza, anche varie aziende si interessarono al progetto di Linus come SUSE o RedHat Software Inc. che crearono le proprie distribuzioni. Successivamente nacque anche Debian. 
 	
 	\section{Open source}	
 		\paragraph{Come è nato il movimento Open-Source?}: \\
@@ -167,7 +222,7 @@
 		 vedi domanda precedente
 		
 		\paragraph{Chi è Bruce Perens?}
-		Bruce perens è insieme a Raymond uno dei fondatori della Open Source 
+		Bruce Perens è insieme a Raymond uno dei fondatori della Open Source 
 		Initiative (OSI). Perens fu il primo project leader di Debian, ovvero
 		il coordinatore dello sviluppo di Debian, e redasse 
 		le Debian Free Software Guidelines (DFSG) che con le dovute modifiche
@@ -175,7 +230,7 @@
 		Open Source Definition (OSD).
 
 		\paragraph{Parlami della Open Source Definition}
-		La open source Definition è un insieme di linee guida chiare per 
+		La Open Source Definition è un insieme di linee guida chiare per 
 		considerare una licenza come Open Source secondo la Open Source 
 		Initiative (OSI). Derivate dalle Debian Software Guidelines (DFSG)
 		ma rese più generali per includere molto software libero sviluppato 
@@ -236,10 +291,10 @@
 		\subsection{GPL v3}
 			
 			\paragraph{Illustrare le caratteristiche principali}
-			La GPL v3 presenta molte differenze con la GPL v2, poichè, nel corso degli anni si sono presentati una serie di problemi che quando è stata creata la GPL v2 non erano presenti.
+			La GPL v3 presenta molte differenze con la GPL v2, poiché, nel corso degli anni si sono presentati una serie di problemi che quando è stata creata la GPL v2 non erano presenti.
 			\begin{itemize}
 				\item \textbf{Tratta il tema dei brevetti software.} In Europa non è possibile richiedere brevetti per il software come su teorie matematiche. Nel corso degli anni la legge è stata modificata è permette quindi di brevettare software se questo è previsto all'interno di un prodotto completo. Ciò portò allo sfruttamento di tale norma e venne aggirato il vincolo dei brevetti software brevettando macchine con il solo scopo di brevettarno il software all'interno. Nel software libero è possibile ccomunque rilasciare software protetto da brevetti a patto che tale codice venga rialsciato insieme ai brevetti.
-				\item \textbf{Tratta il tema della Tivoizzazione.} Il Tivò era un apparecchio per registrare le trasmissioni televisive all'interno dell'hard disk della televisione. Tale apparecchio utilizzava Linux ma aveva un bootloader che non permetteva delle modifiche alla distribuzione utilizzata. La GPL v3 obbliga a dare all'utente tutto il materiale necessario a far fuzionare il prodotto se un utente vuole modificare il software.
+				\item \textbf{Tratta il tema della Tivoizzazione.} Il Tivo era un apparecchio per registrare le trasmissioni televisive all'interno dell'hard disk della televisione. Tale apparecchio utilizzava Linux ma aveva un bootloader che non permetteva delle modifiche alla distribuzione utilizzata. La GPL v3 obbliga a dare all'utente tutto il materiale necessario a far fuzionare il prodotto se un utente vuole modificare il software.
 				\item \textbf{Tratta il tema della delle protezioni digitali.} La GPL v3 afferma che rilasciando il software sotto questa licenza si prende atto di non considerare le proprie modifiche come protezioni digitali.
 				\item \textbf{Internalizzazione.} Si svincola dalla legislazione americana, definendo ogni termine (per evitare interpretazioni ambigue) e mantiene come lingua ufficiale l'inglese. In questo modo diventa compatibile con un numero maggiore di sistemi giuridici.
 				\item \textbf{Regola il lavoro su commissione.} Permettendo di limitare la modifica e/o la ridistribuzione in caso di lavori su commissione.
@@ -538,7 +593,7 @@
 	\begin{verbatim}
 	svn import <path> <URL> -m "messaggio"
 	\end{verbatim} 
-	Committa il sottoalbero <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perchè è, appunto, un commit.\\
+	Committa il sottoalbero <path> non sotto controllo di versionamento nel repository <URL>. Serve il messaggio perché è, appunto, un commit.\\
 	Dopo questo comando, è obbligatorio fare un checkout, in quanto il repo nel server avrà ora una struttura differente rispetto al working copy locale: 
 	abbiamo dei file nel repo remoto che, in locale, non sono sotto controllo di versionamento.\\
 	\\
@@ -602,7 +657,7 @@
 	\begin{verbatim}
 	svn resolved file.txt
 	\end{verbatim}
-	In questo modo diciamo a SVN che i conflitti sono stati risolti ed è quindi posssibile committare. Quindi, infine, dare:
+	In questo modo diciamo a SVN che i conflitti sono stati risolti ed è quindi possibile committare. Quindi, infine, dare:
 	\begin{verbatim}
 	svn commit -m "messaggio"
 	\end{verbatim}
@@ -648,7 +703,11 @@
 	\begin{verbatim}
 	svnadmin load <path> < file.dump
 	\end{verbatim}
-	Ripristino del repo in <path> dal file.dump
+	Ripristino del repo in <path> dal file.dump. 
+	
+	\textbf{N.B.} Se vogliamo ripristinare il repo
+	in un altro path è necessario creare un nuovo repository vuoto con
+	\verb|svnadmin create|.
 	
 	
 \end{document}
