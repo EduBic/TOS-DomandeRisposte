@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
-
+\usepackage{hyperref}
 
 \renewcommand{\theparagraph}{\arabic{paragraph}}
 \setcounter{secnumdepth}{4}
@@ -511,6 +511,7 @@
 	Dove n\_att è il numero della revisione attiale mentre n\_prev è il numero della revisione precedente.
 	
 	\paragraph{Caricare il repository in Internet}
+	\label{svn:repository:internet}
 	Creiamo un repository e mettiamo dentro un file
 	\begin{verbatim}
 	svnadmin create /home/zanna/svn/repos/test
@@ -549,8 +550,10 @@
 	\paragraph{Creare dei permessi per l'accesso al repository}
 	Per settare i permessi da remoto si deve:
 	\begin{itemize}
-		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = ''. Nel caso in cui non sia presente è necessario aggiungerla;
-		\item per gli utenti con password è necessario modificare il file conf/authz \textbf{NON SO COME SI SETTINO DI PRECISO}.
+		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = '' . Nel caso in cui non sia presente è necessario aggiungerla;
+		\item per gli utenti con password è necessario modificare il file \path{conf/svnserve.conf} e modificare la riga in cui
+		è presente ``auth-access = ''. Nel caso in cui non sia presente è necessario aggiungere questa riga.
+		Per maggiori informazioni su come aggiungere degli utenti, consultare la risposta alla domanda \ref{svn:repository:internet}.
 	\end{itemize}
 
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
