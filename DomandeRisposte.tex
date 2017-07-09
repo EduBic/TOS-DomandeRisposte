@@ -527,7 +527,7 @@
 	[users] 
 	zanna = password
 	\end{verbatim}
-	Ora andiamo a modificare il file conf/svnserve.conf impostando il file precedentemente modificato come file per le password e impostando i permessi per gli utenti senza password
+	Ora andiamo a modificare il file \path{conf/svnserve.conf} impostando il file precedentemente modificato come file per le password e impostando i permessi per gli utenti senza password
 	\begin{verbatim}
 	gedit /home/zanna/svn/repos/test/conf/svnserve.conf
 	[general] 
@@ -550,10 +550,42 @@
 	\paragraph{Creare dei permessi per l'accesso al repository}
 	Per settare i permessi da remoto si deve:
 	\begin{itemize}
-		\item per gli utenti senza una password è necessario accedere al file conf/svnserve.conf e modificare la riga in cui è presente ``anon-access = '' . Nel caso in cui non sia presente è necessario aggiungerla;
+		\item per gli utenti senza una password è necessario accedere al \path{file conf/svnserve.conf} e modificare la riga in cui è presente ``anon-access = '' . Nel caso in cui non sia presente è necessario aggiungerla;
 		\item per gli utenti con password è necessario modificare il file \path{conf/svnserve.conf} e modificare la riga in cui
 		è presente ``auth-access = ''. Nel caso in cui non sia presente è necessario aggiungere questa riga.
 		Per maggiori informazioni su come aggiungere degli utenti, consultare la risposta alla domanda \ref{svn:repository:internet}.
+		
+		\item per settare permessi specifici a ogni utente (o gruppi di utenti)
+		si può usare il file \path{conf/authz}.
+		Supponiamo di avere nel file \path{conf/passwd}:
+		\begin{verbatim}
+		[users]
+		A = tos
+		B = tos
+		\end{verbatim}
+		nel file \path{conf/svnserve}:
+		\begin{verbatim}
+		[general]
+		anon-access = none
+		password-db = passwd
+		authz-db = authz
+		realm = prova
+		\end{verbatim}
+		e nel file \path{conf/authz}:
+		\begin{verbatim}
+		[aliases]
+		
+		[groups]
+		
+		[/]
+		A = rw
+		B = r
+		\end{verbatim}
+		è importante notare che \verb|[/]| sta per tutto il repository. Volendo
+		si possono settare permessi specifici per particolari sottocartelle
+		(per esempio se una di esse è un progetto o una release).
+		
+		
 	\end{itemize}
 
 	\paragraph{Copiare il contenuto di una cartella tranne del repository in una cartella branches/stable. Inserire un messaggio}
