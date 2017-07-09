@@ -383,7 +383,7 @@
 		\item - -depth ARG, questo comando dice il limite dello scope dell'operazione.
 		\item - -ignore-externals
 		\item - -incremental
-		\item - -no-ignore, vengono considerati anche i file che svn normalmente ignora(settati con la proprietà svn:ignore. Vedere domanda "Ignorare tutti i file ...")
+		\item - -no-ignore, vengono considerati anche i file che svn normalmente ignora(settati con la proprietà svn:ignore. Vedere domanda \ref{svn:ignorare:tutti}).
 		\item \textbf{- -quiet (-q)}, stampa un riassunto delle informazioni sugli elementi localmente modificati
 		ignorando i file che non sono sotto versionamento
 		\item \textbf{- -show-updates (-u)}, stampa le revisioni di lavoro e informazioni su eventuali problemi di out-of-date con il server(out of date:=alterato localmente ma non aggiornato sul server).
@@ -435,6 +435,7 @@
 	svn commit -m "messaggio di commit" *.html
 	\end{verbatim}
 	\paragraph{Ignorare tutti i file all'interno di una precisa cartella}: \\
+	\label{svn:ignorare:tutti}
 	Bisogna settare la proprietà \textit{ignore}, in questo modo:
 	\begin{verbatim}
 	svn propset svn:ignore <path> .
@@ -644,7 +645,7 @@
 	\begin{verbatim}
 	svn ls
 	\end{verbatim}
-	Elenca i file contenuti nella directory corrente equivalente a \verb|svn list|\\-----
+	Elenca i file (sotto versionamento) contenuti nella directory corrente equivalente a \verb|svn list|\\-----
 	\begin{verbatim}
 	svn ls <URL> -Rv
 	\end{verbatim}
