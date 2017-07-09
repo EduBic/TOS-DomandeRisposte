@@ -8,7 +8,8 @@
 	\section{Credits}
 	Domande fornite da Emanuele Carraro. \\
 	Domande trascritte da Eduard Bicego. \\
-	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.
+	Risposte fornite da Eduard Bicego, Luca Bertolini, Mattia Bottaro, Marco Zanella.\\
+	
 	
 	\section{Introduzione al copyright}
 	
@@ -243,7 +244,7 @@
 				\item \textbf{Internalizzazione.} Si svincola dalla legislazione americana, definendo ogni termine (per evitare interpretazioni ambigue) e mantiene come lingua ufficiale l'inglese. In questo modo diventa compatibile con un numero maggiore di sistemi giuridici.
 				\item \textbf{Regola il lavoro su commissione.} Permettendo di limitare la modifica e/o la ridistribuzione in caso di lavori su commissione.
 				\item \textbf{Permette la distribuzione dei codici via internet e peer2peer.}
-				\item \textbf{Permette una serie di restrizioni.} ciò rende la licenza compatibile con l'Apache v2.
+				\item \textbf{Permette una serie di restrizioni \emph{aggiuntive}.} ciò rende la licenza compatibile con l'Apache v2.
 
 			\end{itemize}
 		
@@ -329,6 +330,7 @@
 		\item - -incremental
 		\item - -no-ignore, vengono considerati anche i file che svn normalmente ignora(settati con la proprietà svn:ignore. Vedere domanda "Ignorare tutti i file ...")
 		\item \textbf{- -quiet (-q)}, stampa un riassunto delle informazioni sugli elementi localmente modificati
+		ignorando i file che non sono sotto versionamento
 		\item \textbf{- -show-updates (-u)}, stampa le revisioni di lavoro e informazioni su eventuali problemi di out-of-date con il server(out of date:=alterato localmente ma non aggiornato sul server).
 		\item \textbf{- -verbose (-v)}, stampa dettagliatamente tutte le informazioni di revisione su ogni elemento locale.
 		\item \textbf{- -xml}, stampa l'output in formato XML 
@@ -395,7 +397,7 @@
 	\end{verbatim}
 	nominiamo questo file \textit{svnignore.txt} e diamo il comando
 	\begin{verbatim}
-	svn propset svn:ignore -F svnignore.txt
+	svn propset svn:ignore -F svnignore.txt .
 	\end{verbatim}
 
 	\paragraph{Ottenere conflitti tra due utenti}
